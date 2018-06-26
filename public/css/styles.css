@@ -36,67 +36,69 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	/*margin: 0;
-	padding: 0;*/
-	border: 0;
-	font-size: 100%;
-	/*font: inherit;*/
-	vertical-align: baseline;
+  /*margin: 0;
+  padding: 0;*/
+  border: 0;
+  font-size: 100%;
+  /*font: inherit;*/
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
-	display: block;
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
-}
+
 blockquote, q {
-	quotes: none;
+  quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+  content: '';
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* -------- 1. lAYOUT  --------*/
-.accordion{
-	padding: 0px 0px;
-	margin-left: 0px;
-	margin-right:  0px;
-}
-.card{
-	border-radius: 0%;
-	border: 0px;
-}
-.card-header  {
-	
-	background: #76933C;
-}
-.card-header > h5 > .btn{
-	color:white;
-}
-.card-body{
-	background: #D8E4BC;
-	line-height: 25px;
-}
-.card-body > ul > li > a {
-	color: #76933C;
-}
-.card-body > ul > li :hover {
-	color: darkgreen;
-}
 
 /* -------- 2. GENERIC ITEM  --------*/
 /* -------- 3. PART OF WEB  --------*/
 /* -------- 4. LIST  --------*/
 /* -------- 5. FORM  --------*/
 /* -------- 6. ANIMATIONS  --------*/
+
+.footer,
+.push {
+
+  justify-content: center;
+  vertical-align: center;
+  background: #D8E4BC;
+  max-width: auto;
+  display: block;
+  
+}
+.footer a{
+color: lightgray;
+}
+.footer-bottom{
+  background: #76933C;
+  color: #D8E4BC;
+  line-height: 1.5;
+  padding-bottom:  15px;
+  padding-top:  15px;
+  
+}
+.footer-top a:link{
+  color: #76933C;
+  text-decoration: none;
+
+}
+.social a:link{
+  color: #D8E4BC;
+}

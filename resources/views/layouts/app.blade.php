@@ -2,241 +2,545 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>BF Global</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="<?php echo e(asset('css/styles.css')); ?>" />
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-118989375-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-118989375-1');
-</script>
+	<title>@yield('company') - @yield('title')</title>
+
+  <!-- Required meta tags-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Sistema multiempresa">
+  <meta name="author" content="Jhosnoirlit Hernández">
+  <meta name="keywords" content="multiempresa">
+
+
+  <!--CSS-->
+    <!-- Fontfaces CSS-->
+  <link href="<?php echo e(asset('css/font-face.css')) ?>" rel="stylesheet" media="all">
+  <link href="<?php echo e(asset('js/font-awesome-4.7/css/font-awesome.min.css')) ?>" rel="stylesheet" media="all">
+  <link href="<?php echo e(asset('js/font-awesome-5/css/fontawesome-all.min.css')) ?>" rel="stylesheet" media="all">
+  <link href="<?php echo e(asset('js/mdi-font/css/material-design-iconic-font.min.css'))?>" rel="stylesheet" media="all">
+
+  <!-- Bootstrap CSS-->
+  <link href="<?php echo e(asset('js/bootstrap-4.1/bootstrap.min.css'))?>" rel="stylesheet" media="all">
+
+  <!-- Vendor CSS-->
+  <link href="<?php echo e(asset('js/animsition/animsition.min.css')) ?>" rel="stylesheet" media="all">
+  <link href="<?php echo e(asset('js/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css')) ?>" rel="stylesheet" media="all">
+  <link href="<?php echo e(asset('js/wow/animate.css')) ?>" rel="stylesheet" media="all">
+  <link href="<?php echo e(asset('js/css-hamburgers/hamburgers.min.css')) ?>" rel="stylesheet" media="all">
+  <link href="<?php echo e(asset('js/slick/slick.css" rel="stylesheet')) ?>" media="all">
+  <link href="<?php echo e(asset('js/select2/select2.min.css')) ?>" rel="stylesheet" media="all">
+  <link href="<?php echo e(asset('js/perfect-scrollbar/perfect-scrollbar.css')) ?>" rel="stylesheet" media="all">
+
+  <!-- Main CSS -->
+  
+  <link rel="stylesheet" href="<?php echo e(asset('css/theme.css')); ?>" />
+  <link rel="stylesheet" href="<?php echo e(asset('css/font-face.css')); ?>" />
+  
+
+
+
+
+
+  
+  <!-- Global site tag (gtag.js) - Google Analytics   
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118989375-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-118989375-1');
+  </script>
+-->
 
 </head>
-<body>
-	<header>
-    <nav class="navbar">
-        <a class="navbar-brand" href="#"><figure><img src="http://constructoraonice.com/imagenes/2017-2017-LOGO.gif" alt="BF Global"></figure></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-    </nav>
-
-  </header>
-
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-3 saca">
-        <div class="accordion" id="accordionMenu">
-          <div class="card">
-            <div class="card-header" id="ventas">
-              <h5 class="mb-0">
-                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseVentas" aria-expanded="false" aria-controls="collapseOne">
-                  Ventas
-                </button>
-              </h5>
+<body class="animsition">
+  <div class="page-wrapper">
+    <!-- HEADER MOBILE-->
+    <header class="header-mobile d-block d-lg-none">
+      <div class="header-mobile__bar">
+        <div class="container-fluid">
+          <div class="header-mobile-inner">
+            <div class="col-md-8 col-sm-8">
+            <a class="logo" href="index.html">
+              <img class=" img-fluid" src="<?php echo e(asset('img/bfglobal-logo.png')) ?>" alt="BFGlobal" />
+            </a>
             </div>
-
-            <div id="collapseVentas" class="collapse" aria-labelledby="ventas" data-parent="#accordionMenu">
-              <div class="card-body">
-                <ul>
-                 <li><a href="#">Clientes</a></li>
-                 <li><a href="#">Vendedores</a></li>
-                 <li><a href="#">Pedidos/cotizaciones</a></li>
-                 <li><a href="#">Facturación</a></li>
-                 <li><a href="#">Guías</a></li>
-                 <li><a href="#">Notas de crédito</a></li>
-                 <li><a href="#">Notas de debito</a></li>
-                 <li><a href="#">Reportes</a></li>
-               </ul>
-             </div>
-           </div>
-         </div>
-         <div class="card">
-          <div class="card-header" id="compras">
-            <h5 class="mb-0">
-              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseCompras" aria-expanded="false" aria-controls="collapseTwo">
-                Compras
-              </button>
-            </h5>
-          </div>
-          <div id="collapseCompras" class="collapse" aria-labelledby="compras" data-parent="#accordionMenu">
-            <div class="card-body">
-              <ul>
-               <li><a href="">Proveedores</a></li>
-               <li><a href="">Órdenes de compra</a></li>
-               <li><a href="">Compra nacional</a></li>
-               <li><a href="">Compra importadas</a></li>
-               <li><a href="">Guías</a></li>
-               <li><a href="#">Notas de crédito</a></li>
-               <li><a href="#">Notas de debito</a></li>
-               <li><a href="#">Reportes</a></li>
-             </ul>
-           </div>
-         </div>
-       </div>
-       <div class="card">
-        <div class="card-header" id="GestionMateriales">
-          <h5 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseGestionMateriales" aria-expanded="false" aria-controls="collapseGestionMateriales">
-              Gestión de materiales
+            <button class="hamburger hamburger--slider" type="button">
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
             </button>
-          </h5>
-        </div>
-        <div id="collapseGestionMateriales" class="collapse" aria-labelledby="GestionMateriales" data-parent="#accordionMenu">
-          <div class="card-body">
-            <ul>
-              <li><a href="">Histórico de costos por artículos</a></li>
-              <li><a href="">Kardex</a></li>
-              <li><a href="">Reportes de ventas</a></li>
-              <li><a href="">Búsqueda y filtros</a></li>
-
-            </div>
-          </div>
-        </div>  
-        <div class="card">
-          <div class="card-header" id="contabilidad">
-            <h5 class="mb-0">
-              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseContabilidad" aria-expanded="false" aria-controls="collapseContabilidad">
-                Contabilidad
-              </button>
-            </h5>
-          </div>
-          <div id="collapseContabilidad" class="collapse" aria-labelledby="contabilidad" data-parent="#accordionMenu">
-            <div class="card-body">
-              <ul>
-                <li><a href="">Caja chica</a></li>
-                <li><a href="">Estado mensual</a></li>
-                <li><a href="">Balance mensual</a></li>
-                <li><a href="">Comisiones</a></li>
-                <li><a href=""></a></li>
-              </ul>
-            </div>
           </div>
         </div>
-        <div class="card">
-          <div class="card-header" id="servicioTecnico">
-            <h5 class="mb-0">
-              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseServicioTecnico" aria-expanded="false" aria-controls="collapseServicioTecnico">
-                Servicio Técnico
-              </button>
-            </h5>
-          </div>
-          <div id="collapseServicioTecnico" class="collapse" aria-labelledby="servicioTecnico" data-parent="#accordionMenu">
-            <div class="card-body">
-              <ul>
-                <li><a href="">Informes</a></li>
-                <li><a href="">Actas de conformidad</a></li>
-                <li><a href="">Actas de entrega</a></li>
-                <li><a href="">Cartas de garantía</a></li>
-                <li><a href="">Contratos de mantenimiento</a></li>
+      </div>
+      <nav class="navbar-mobile">
+        <div class="container-fluid">
+          <ul class="navbar-mobile__list list-unstyled">
+            <li class="has-sub">
+              <a class="js-arrow" href="#">
+                <i class="fas fa-tachometer-alt"></i>Ventas</a>
+              <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                <li>
+                  <a href="#">Clientes</a>
+                </li>
+                <li>
+                  <a href="#">Vendedores</a>
+                </li>
+                <li>
+                  <a href="#">Cotizaciones</a>
+                </li>
+                <li>
+                  <a href="#">Facturas</a>
+                </li>
+                <li>
+                  <a href="#">Boletas</a>
+                </li>
+                <li>
+                  <a href="#">Guías</a>
+                </li>
+                <li>
+                  <a href="#">Nota de Débito</a>
+                </li>
+                <li>
+                  <a href="#">Nota de Crédito</a>
+                </li>
               </ul>
-            </div>
-          </div>
-        </div>  
-  <!--  
-  <div class="card">
-    <div class="card-header" id="crm">
-      <h5 class="mb-0">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#" aria-expanded="false" aria-controls="collapseCrm">
-          CRM
-        </button>
-      </h5>
-    </div>
-    <div id="collapseCrm" class="collapse" aria-labelledby="crm" data-parent="#accordionMenu">
-      <div class="card-body">
-        
-      </div>
-    </div>
-  </div>  
-  
-  <div class="card">
-    <div class="card-header" id="gestionActivos">
-      <h5 class="mb-0">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseGestionActivos" aria-expanded="false" aria-controls="collapseGestionActivos">
-          Gestión de activos
-        </button>
-      </h5>
-    </div>
-    <div id="collapseGestionActivos" class="collapse" aria-labelledby="gestionActivos" data-parent="#accordionMenu">
-      <div class="card-body">
-        
-      </div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-header" id="planillas">
-      <h5 class="mb-0">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsePlanillas" aria-expanded="false" aria-controls="collapsePlanillas">
-          Planillas
-        </button>
-      </h5>
-    </div>
-    <div id="collapsePlanillas" class="collapse" aria-labelledby="planillas" data-parent="#accordionMenu">
-      <div class="card-body">
-        
-      </div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-header" id="gestionProyectos">
-      <h5 class="mb-0">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseGestionProyectos" aria-expanded="false" aria-controls="collapseGestionProyectos">
-          Gestión de Proyectos
-        </button>
-      </h5>
-    </div>
-    <div id="collapseGestionProyectos" class="collapse" aria-labelledby="gestionProyectos" data-parent="#accordionMenu">
-      <div class="card-body">
-        
-      </div>
-    </div>
-  </div>
-
-<div class="card">
-  <div class="card-header" id="indicadores">
-    <h5 class="mb-0">
-      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseIndicadores" aria-expanded="false" aria-controls="collapseIndicadores">
-        Indicadores
-      </button>
-    </h5>
-  </div>
-  <div id="collapseIndicadores" class="collapse" aria-labelledby="indicadores" data-parent="#accordionMenu">
-    <div class="card-body">
+            </li>
+            <li class="has-sub">
+              <a class="js-arrow" href="#">
+                <i class="fas fa-tachometer-alt"></i>Compras</a>
+              <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                <li>
+                  <a href="<?php echo e(url('proveedores')); ?>">Proveedores</a>
+                </li>
+                <li>
+                  <a href="#">Vendedores</a>
+                </li>
+                <li>
+                  <a href="#">Ordenes de Compra</a>
+                </li>
+                <li>
+                  <a href="#">Compra Nacional</a>
+                </li>
+                <li>
+                  <a href="#">Compra Importada</a>
+                </li>
+                <li>
+                  <a href="#">Guías</a>
+                </li>
+                <li>
+                  <a href="#">Nota de Débito</a>
+                </li>
+                <li>
+                  <a href="#">Nota de Crédito</a>
+                </li>
+              </ul>
+            </li>
+            <li class="has-sub">
+              <a class="js-arrow" href="#">
+                <i class="fas fa-tachometer-alt"></i>Gestión de materiales</a>
+              <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                <li>
+                  <a href="#">Artículos</a>
+                </li>
+                <li>
+                  <a href="#">Kardex</a>
+                </li>
+                <li>
+                  <a href="#">Resportes</a>
+                </li>
+                <li>
+                  <a href="#">Búsquedas y filtro</a>
+                </li>
+                
+              </ul>
+            </li>
+            <li class="has-sub">
+              <a class="js-arrow" href="#">
+                <i class="fas fa-tachometer-alt"></i>Contabilidad</a>
+              <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                <li>
+                  <a href="#">Cobranzas</a>
+                </li>
+                <li>
+                  <a href="#">Caja Chica</a>
+                </li>
+                <li>
+                  <a href="#">Estado de cuenta bancario</a>
+                </li>
+                <li>
+                  <a href="#">Configuración</a>
+                </li>
+                
+              </ul>
+            </li>
+            
+            <li >
+              <a  href="#">
+                <i class="fas fa-tachometer-alt"></i>CRM</a>
+            </li>
+            
+            <li class="has-sub">
+              <a class="js-arrow" href="#">
+                <i class="fas fa-tachometer-alt"></i>Proyectos</a>
+              <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                <li>
+                  <a href="#">Busqueda</a>
+                </li>
+                <li>
+                  <a href="#">Indicadores</a>
+                </li>
+                <li>
+                  <a href="#">Informes técnicos</a>
+                </li>
+                  
+              </ul>
+            </li>
       
-    </div>
-  </div>
-</div>
--->
-<div class="card">
-  <div class="card-header" id="adminSistema">
-    <h5 class="mb-0">
-      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseAdminSistema" aria-expanded="false" aria-controls="collapseAdminSistema">
-        Administración de sistema
-      </button>
-    </h5>
-  </div>
-  <div id="collapseAdminSistema" class="collapse" aria-labelledby="adminSistema" data-parent="#accordionMenu">
-    <div class="card-body">
-      <ul>
-       <li><a href="">Usuarios</a></li>
-       <li><a href="">Auditoria</a></li>
-     </ul>
-   </div>
- </div>
-</div>
-</div>
-</div>
-<div class="col-md-9 casa"></div>
-</div>
-</div>
+            <li >
+              <a  href="#">
+                <i class="fas fa-tachometer-alt"></i>Gestión de activos</a>
+            </li>
+            <li>
+              <a href="chart.html">
+                <i class="fas fa-chart-bar"></i>Indicadores</a>
+            </li>
+            <li class="has-sub">
+              <a class="js-arrow" href="#">
+                <i class="fas fa-copy"></i>Administración</a>
+              <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                <li>
+                  <a href="login.html">Usuarios</a>
+                </li>
+                <li>
+                  <a href="register.html">Auditoria</a>
+                </li>
 
+              </ul>
+            </li>
+            
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <!-- END HEADER MOBILE-->
+
+    <!-- MENU SIDEBAR-->
+    <aside class="menu-sidebar d-none d-lg-block">
+      <div class="logo">
+        <a href="#">
+          <img src="<?php echo e(asset('img/bfglobal-logo.png')) ?>" alt="BFGlobal" />
+        </a>
+      </div>
+      <div class="menu-sidebar__content js-scrollbar1">
+        <nav class="navbar-sidebar">
+          <ul class="list-unstyled navbar__list">
+            <li class="has-sub">
+              <a class="js-arrow" href="#">
+                <i class="fas fa-tachometer-alt"></i>Ventas</a>
+              <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                <li>
+                  <a href="#">Clientes</a>
+                </li>
+                <li>
+                  <a href="#">Vendedores</a>
+                </li>
+                <li>
+                  <a href="#">Cotizaciones</a>
+                </li>
+                <li>
+                  <a href="#">Facturas</a>
+                </li>
+                <li>
+                  <a href="#">Boletas</a>
+                </li>
+                <li>
+                  <a href="#">Guías</a>
+                </li>
+                <li>
+                  <a href="#">Nota de Débito</a>
+                </li>
+                <li>
+                  <a href="#">Nota de Crédito</a>
+                </li>
+              </ul>
+            </li>
+            <li class="has-sub">
+              <a class="js-arrow" href="#">
+                <i class="fas fa-tachometer-alt"></i>Compras</a>
+              <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                <li>
+                  <a href="<?php echo e(url('proveedores')); ?>">Proveedores</a>
+                </li>
+                <li>
+                  <a href="#">Vendedores</a>
+                </li>
+                <li>
+                  <a href="#">Ordenes de Compra</a>
+                </li>
+                <li>
+                  <a href="#">Compra Nacional</a>
+                </li>
+                <li>
+                  <a href="#">Compra Importada</a>
+                </li>
+                <li>
+                  <a href="#">Guías</a>
+                </li>
+                <li>
+                  <a href="#">Nota de Débito</a>
+                </li>
+                <li>
+                  <a href="#">Nota de Crédito</a>
+                </li>
+              </ul>
+            </li>
+            <li class="has-sub">
+              <a class="js-arrow" href="#">
+                <i class="fas fa-tachometer-alt"></i>Gestión de materiales</a>
+              <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                <li>
+                  <a href="#">Artículos</a>
+                </li>
+                <li>
+                  <a href="#">Kardex</a>
+                </li>
+                <li>
+                  <a href="#">Resportes</a>
+                </li>
+                <li>
+                  <a href="#">Búsquedas y filtro</a>
+                </li>
+                
+              </ul>
+            </li>
+            <li class="has-sub">
+              <a class="js-arrow" href="#">
+                <i class="fas fa-tachometer-alt"></i>Contabilidad</a>
+              <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                <li>
+                  <a href="#">Cobranzas</a>
+                </li>
+                <li>
+                  <a href="#">Caja Chica</a>
+                </li>
+                <li>
+                  <a href="#">Estado de cuenta bancario</a>
+                </li>
+                <li>
+                  <a href="#">Configuración</a>
+                </li>
+                
+              </ul>
+            </li>
+           
+            <li >
+              <a  href="#">
+                <i class="fas fa-tachometer-alt"></i>CRM</a>
+            </li>
+        
+            <li class="has-sub">
+              <a class="js-arrow" href="#">
+                <i class="fas fa-tachometer-alt"></i>Proyectos</a>
+              <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                <li>
+                  <a href="#">Busqueda</a>
+                </li>
+                <li>
+                  <a href="#">Indicadores</a>
+                </li>
+                <li>
+                  <a href="#">Informes técnicos</a>
+                </li>
+                  
+              </ul>
+            </li>
+            
+            <li >
+              <a  href="#">
+                <i class="fas fa-tachometer-alt"></i>Gestión de activos</a>
+            </li>
+            <li>
+              <a href="chart.html">
+                <i class="fas fa-chart-bar"></i>Indicadores</a>
+            </li>
+            <li class="has-sub">
+              <a class="js-arrow" href="#">
+                <i class="fas fa-copy"></i>Administración</a>
+              <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                <li>
+                  <a href="login.html">Usuarios</a>
+                </li>
+                <li>
+                  <a href="register.html">Auditoria</a>
+                </li>
+
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+    <!-- END MENU SIDEBAR-->
+
+    <!-- PAGE CONTAINER-->
+    <div class="page-container">
+      <!-- HEADER DESKTOP-->
+      <header class="header-desktop">
+        <div class="section__content section__content--p30">
+          <div class="container-fluid">
+            <div class="header-wrap">
+              <form class="form-header" action="" method="POST">
+                <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
+                <button class="au-btn--submit" type="submit">
+                  <i class="zmdi zmdi-search"></i>
+                </button>
+              </form>
+              <div class="header-button">
+                <div class="noti-wrap">
+
+                 
+                  <div class="noti__item js-item-menu">
+                    <i class="zmdi zmdi-notifications"></i>
+                    <span class="quantity">3</span>
+                    <div class="notifi-dropdown js-dropdown">
+                      <div class="notifi__title">
+                        <p>You have 3 Notifications</p>
+                      </div>
+                      <div class="notifi__item">
+                        <div class="bg-c1 img-cir img-40">
+                          <i class="zmdi zmdi-email-open"></i>
+                        </div>
+                        <div class="content">
+                          <p>You got a email notification</p>
+                          <span class="date">April 12, 2018 06:50</span>
+                        </div>
+                      </div>
+                      <div class="notifi__item">
+                        <div class="bg-c2 img-cir img-40">
+                          <i class="zmdi zmdi-account-box"></i>
+                        </div>
+                        <div class="content">
+                          <p>Your account has been blocked</p>
+                          <span class="date">April 12, 2018 06:50</span>
+                        </div>
+                      </div>
+                      <div class="notifi__item">
+                        <div class="bg-c3 img-cir img-40">
+                          <i class="zmdi zmdi-file-text"></i>
+                        </div>
+                        <div class="content">
+                          <p>You got a new file</p>
+                          <span class="date">April 12, 2018 06:50</span>
+                        </div>
+                      </div>
+                      <div class="notifi__footer">
+                        <a href="#">All notifications</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="account-wrap">
+                  <div class="account-item clearfix js-item-menu">
+                    <div class="image rounded-circle">
+                      <img src="<?php echo e(asset('img/icon/avatar-01.jpg')) ?>" alt="John Doe" class="" />
+                    </div>
+                    <div class="content">
+                      <a class="js-acc-btn" href="#">Usuario</a>
+                    </div>
+                    <div class="account-dropdown js-dropdown">
+                      <div class="info clearfix">
+                        <div class="image rounded-circle">
+                          <a href="#">
+                            <img src="<?php echo e(asset('img/icon/avatar-01.jpg')) ?>" class="" alt="John Doe" />
+                          </a>
+                        </div>
+                        <div class="content">
+                          <h5 class="name">
+                            <a href="#">Usuario</a>
+                          </h5>
+                          <span class="email">usuario@example.com</span>
+                        </div>
+                      </div>
+                      <div class="account-dropdown__body">
+                        <div class="account-dropdown__item">
+                          <a href="#">
+                            <i class="zmdi zmdi-account"></i>Cuenta</a>
+                        </div>
+                        <div class="account-dropdown__item">
+                          <a href="#">
+                            <i class="zmdi zmdi-settings"></i>Configuración</a>
+                        </div>
+                        <div class="account-dropdown__item">
+                          <a href="#">
+                            <i class="zmdi zmdi-settings"></i>empresas</a>
+                        </div>
+                        
+                      <div class="account-dropdown__footer">
+                        <a href="#">
+                          <i class="zmdi zmdi-power"></i>Salir</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- END HEADER DESKTOP-->
+
+      <!-- MAIN CONTENT-->
+      <div class="main-content">
+        <div class="section__content section__content--p30">
+          <div class="container-fluid">
+            <div class="row">
+              @yield('main-content')
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END PAGE CONTAINER-->
+    
+    <!-- FOOTER-->
+                          <div class="row">
+                            <div class="col-md-12">
+                                <div class="copyright">
+                                    footer</p>
+                                </div>
+                            </div>
+                        </div>
+    <!-- END FOOTER-->
+
+  </div>
+
+    <!-- Jquery JS-->
+    <script src="<?php echo e(asset('js/jquery-3.2.1.min.js'))?>"></script>
+    <!-- Bootstrap JS-->
+    <script src="<?php echo e(asset('js/bootstrap-4.1/popper.min.js')) ?>"></script>
+    <script src="<?php echo e(asset('js/bootstrap-4.1/bootstrap.min.js')) ?>"></script>
+    <!-- Vendor JS       -->
+    <script type="text/javascript" src="<?php echo e(asset('js/DataTables/datatables.min.js')) ?>"></script>
+    <script src="<?php echo e(asset('js/slick/slick.min.js'))?>">
+    </script>
+    <script src="<?php echo e(asset('js/wow/wow.min.js'))?>"></script>
+    <script src="<?php echo e(asset('js/animsition/animsition.min.js')) ?>"></script>
+    <script src="<?php echo e(asset('js/bootstrap-progressbar/bootstrap-progressbar.min.js'))?>">
+    </script>
+    <script src="<?php echo e(asset('js/counter-up/jquery.waypoints.min.js')) ?>"></script>
+    <script src="<?php echo e(asset('js/counter-up/jquery.counterup.min.js')) ?>">
+    </script>
+    <script src="<?php echo e(asset('js/circle-progress/circle-progress.min.js')) ?>"></script>
+    <script src="<?php echo e(asset('js/perfect-scrollbar/perfect-scrollbar.js')) ?>"></script>
+    <script src="<?php echo e(asset('js/chartjs/Chart.bundle.min.js')) ?>"></script>
+    <script src="<?php echo e(asset('js/select2/select2.min.js')) ?>">
+    </script>
+
+    <!-- Main JS-->
+    <script src="<?php echo e(asset('js/main.js')) ?>"></script>
 
 
 </body>

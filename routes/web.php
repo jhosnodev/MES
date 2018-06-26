@@ -14,3 +14,26 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/nuevo_proveedor', function () {
+    return view('compras.proveedores');
+});
+
+
+Route::get('/nuevo_item', function () {
+    return view('items.items');
+});
+
+
+Route::get('/nuevo_contacto', function () {
+    return view('compras.proveedores');
+});
+
+
+Route::get('/nuevo_cliente', function () {
+    return view('ventas.clientes');
+});
+
+Route::get('/perfil', function () {
+    return view('Auth.perfil');
+});
