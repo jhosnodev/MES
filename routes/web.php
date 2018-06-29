@@ -35,5 +35,11 @@ Route::get('/nuevo_cliente', function () {
 });
 
 Route::get('/perfil', function () {
-    return view('Auth.perfil');
+    return view('auth.prolife');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+

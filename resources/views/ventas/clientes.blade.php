@@ -5,7 +5,7 @@
 
 
 
-@section('main-content')  
+@section('content')  
 <div class="card col-md-11">
  <div class="card-header">
     <strong>Cliente</strong> Registro

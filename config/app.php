@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Multiempresa'),
 
     /*
     |--------------------------------------------------------------------------
@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'es',
 
     /*
     |--------------------------------------------------------------------------
@@ -171,11 +171,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        MultiEmpresa\Providers\AppServiceProvider::class,
+        MultiEmpresa\Providers\AuthServiceProvider::class,
+        // MultiEmpresa\Providers\BroadcastServiceProvider::class,
+        MultiEmpresa\Providers\EventServiceProvider::class,
+        MultiEmpresa\Providers\RouteServiceProvider::class,
 
     ],
 

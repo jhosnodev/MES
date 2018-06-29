@@ -1,18 +1,18 @@
 @extends('layouts.app')
+@include('auth.login')
 
 @section('company', 'BF Global')
 @section('title', 'Bienvenido')
 
-  
+@guest
+	 @section('login')
+	 	
+	 @endsection
+@else
+@section('content')
+	 	@parent
+	 @endsection
+@endguest
 
-        @section('main-content')  
-        	<p>Hola, Jhosno. Espero que te rinda la noche! </p>
-<p>Hola, Jhosno. Espero que te rinda la noche! </p>
-<p>Hola, Jhosno. Espero que te rinda la noche! </p>
-<p>Hola, Jhosno. Espero que te rinda la noche! </p>
-<p>Hola, Jhosno. Espero que te rinda la noche! </p>
-<p>Hola, Jhosno. Espero que te rinda la noche! </p>
-      	@endsection
- 
 
 

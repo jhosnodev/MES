@@ -1,10 +1,13 @@
+
 <!DOCTYPE html>
-<html lang="es">
+<html lang="{{ app()->getLocale() }}">
 <head>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-	<title>@yield('company') - @yield('title')</title>
-
+    <title>@yield('company') - @yield('title')</title>
+    
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
   <!-- Required meta tags-->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -38,10 +41,6 @@
   <link rel="stylesheet" href="<?php echo e(asset('css/font-face.css')); ?>" />
   
 
-
-
-
-
   
   <!-- Global site tag (gtag.js) - Google Analytics   
 
@@ -58,13 +57,18 @@
 </head>
 <body class="animsition">
   <div class="page-wrapper">
+    @guest
+        @yield('guest-content')
+
+    @else
+
     <!-- HEADER MOBILE-->
     <header class="header-mobile d-block d-lg-none">
       <div class="header-mobile__bar">
         <div class="container-fluid">
           <div class="header-mobile-inner">
             <div class="col-md-8 col-sm-8">
-            <a class="logo" href="index.html">
+            <a class="logo" href="{{ url('/') }}">
               <img class=" img-fluid" src="<?php echo e(asset('img/bfglobal-logo.png')) ?>" alt="BFGlobal" />
             </a>
             </div>
@@ -231,7 +235,7 @@
     <!-- MENU SIDEBAR-->
     <aside class="menu-sidebar d-none d-lg-block">
       <div class="logo">
-        <a href="#">
+        <a href="{{ url('/') }}">
           <img src="<?php echo e(asset('img/bfglobal-logo.png')) ?>" alt="BFGlobal" />
         </a>
       </div>
@@ -449,7 +453,7 @@
                       <img src="<?php echo e(asset('img/icon/avatar-01.jpg')) ?>" alt="John Doe" class="" />
                     </div>
                     <div class="content">
-                      <a class="js-acc-btn" href="#">Usuario</a>
+                      <a class="js-acc-btn" href="#">{{ Auth::user()->name }}</a>
                     </div>
                     <div class="account-dropdown js-dropdown">
                       <div class="info clearfix">
@@ -460,9 +464,9 @@
                         </div>
                         <div class="content">
                           <h5 class="name">
-                            <a href="#">Usuario</a>
+                            <a href="<?php echo e(url('perfil')); ?>">{{ Auth::user()->name }}</a>
                           </h5>
-                          <span class="email">usuario@example.com</span>
+                          <span class="email">{{ Auth::user()->email }}</span>
                         </div>
                       </div>
                       <div class="account-dropdown__body">
@@ -480,8 +484,13 @@
                         </div>
                         
                       <div class="account-dropdown__footer">
-                        <a href="#">
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
                           <i class="zmdi zmdi-power"></i>Salir</a>
+                            
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                        </form>
                       </div>
                     </div>
                   </div>
@@ -498,7 +507,7 @@
         <div class="section__content section__content--p30">
           <div class="container-fluid">
             <div class="row">
-              @yield('main-content')
+              @yield('content')
           </div>
         </div>
       </div>
@@ -514,7 +523,7 @@
                             </div>
                         </div>
     <!-- END FOOTER-->
-
+@endguest
   </div>
 
     <!-- Jquery JS-->
@@ -541,7 +550,7 @@
 
     <!-- Main JS-->
     <script src="<?php echo e(asset('js/main.js')) ?>"></script>
-
+    <script src="{{ asset('js/app.js') }}"></script>
 
 </body>
 </html>
