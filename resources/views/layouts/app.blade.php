@@ -15,6 +15,12 @@
   <meta name="author" content="Jhosnoirlit Hernández">
   <meta name="keywords" content="multiempresa">
 
+   <!-- Jquery JS-->
+    <script src="<?php echo e(asset('js/jquery-3.3.1.js'))?>"></script>
+        <!-- Datatable-->
+    <script src="<?php echo e(asset('js/datatable/dataTables.bootstrap4.min.css'))?>"></script>
+    <script src="<?php echo e(asset('js/datatable/responsive.bootstrap4.min.css'))?>"></script>
+
 
   <!--CSS-->
     <!-- Fontfaces CSS-->
@@ -85,7 +91,7 @@
           <ul class="navbar-mobile__list list-unstyled">
             <li class="has-sub">
               <a class="js-arrow" href="#">
-                <i class="fas fa-tachometer-alt"></i>Ventas</a>
+                <i class="fas fa-truck"></i>Ventas</a>
               <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                 <li>
                   <a href="#">Clientes</a>
@@ -115,10 +121,10 @@
             </li>
             <li class="has-sub">
               <a class="js-arrow" href="#">
-                <i class="fas fa-tachometer-alt"></i>Compras</a>
+                <i class="fas fa-shopping-cart"></i>Compras</a>
               <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                 <li>
-                  <a href="<?php echo e(url('proveedores')); ?>">Proveedores</a>
+                  <a href="{{ route('proveedor.index') }}">Proveedores</a>
                 </li>
                 <li>
                   <a href="#">Vendedores</a>
@@ -145,7 +151,7 @@
             </li>
             <li class="has-sub">
               <a class="js-arrow" href="#">
-                <i class="fas fa-tachometer-alt"></i>Gestión de materiales</a>
+                <i class="fas fa-star"></i>Gestión de materiales</a>
               <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                 <li>
                   <a href="#">Artículos</a>
@@ -164,7 +170,7 @@
             </li>
             <li class="has-sub">
               <a class="js-arrow" href="#">
-                <i class="fas fa-tachometer-alt"></i>Contabilidad</a>
+                <i class="fas fa-book"></i>Contabilidad</a>
               <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                 <li>
                   <a href="#">Cobranzas</a>
@@ -184,7 +190,7 @@
             
             <li >
               <a  href="#">
-                <i class="fas fa-tachometer-alt"></i>CRM</a>
+                <i class="fas fa-group"></i>CRM</a>
             </li>
             
             <li class="has-sub">
@@ -192,7 +198,7 @@
                 <i class="fas fa-tachometer-alt"></i>Proyectos</a>
               <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                 <li>
-                  <a href="#">Busqueda</a>
+                  <a href="#">Búsqueda</a>
                 </li>
                 <li>
                   <a href="#">Indicadores</a>
@@ -206,7 +212,7 @@
       
             <li >
               <a  href="#">
-                <i class="fas fa-tachometer-alt"></i>Gestión de activos</a>
+                <i class="fas fa-gavel"></i>Gestión de activos</a>
             </li>
             <li>
               <a href="chart.html">
@@ -244,7 +250,7 @@
           <ul class="list-unstyled navbar__list">
             <li class="has-sub">
               <a class="js-arrow" href="#">
-                <i class="fas fa-tachometer-alt"></i>Ventas</a>
+                <i class="fas fa-truck"></i>Ventas</a>
               <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                 <li>
                   <a href="#">Clientes</a>
@@ -274,10 +280,10 @@
             </li>
             <li class="has-sub">
               <a class="js-arrow" href="#">
-                <i class="fas fa-tachometer-alt"></i>Compras</a>
+                <i class="fas fa-shopping-cart"></i>Compras</a>
               <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                 <li>
-                  <a href="<?php echo e(url('proveedores')); ?>">Proveedores</a>
+                  <a href="{{ route('proveedor.index') }}">Proveedores</a>
                 </li>
                 <li>
                   <a href="#">Vendedores</a>
@@ -304,7 +310,7 @@
             </li>
             <li class="has-sub">
               <a class="js-arrow" href="#">
-                <i class="fas fa-tachometer-alt"></i>Gestión de materiales</a>
+                <i class="fas fa-star"></i>Gestión de materiales</a>
               <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                 <li>
                   <a href="#">Artículos</a>
@@ -323,7 +329,7 @@
             </li>
             <li class="has-sub">
               <a class="js-arrow" href="#">
-                <i class="fas fa-tachometer-alt"></i>Contabilidad</a>
+                <i class="fas fa-book"></i>Contabilidad</a>
               <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                 <li>
                   <a href="#">Cobranzas</a>
@@ -343,7 +349,7 @@
            
             <li >
               <a  href="#">
-                <i class="fas fa-tachometer-alt"></i>CRM</a>
+                <i class="fas fa-group"></i>CRM</a>
             </li>
         
             <li class="has-sub">
@@ -351,7 +357,7 @@
                 <i class="fas fa-tachometer-alt"></i>Proyectos</a>
               <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                 <li>
-                  <a href="#">Busqueda</a>
+                  <a href="#">Búsqueda</a>
                 </li>
                 <li>
                   <a href="#">Indicadores</a>
@@ -365,7 +371,7 @@
             
             <li >
               <a  href="#">
-                <i class="fas fa-tachometer-alt"></i>Gestión de activos</a>
+                <i class="fas fa-gavel"></i>Gestión de activos</a>
             </li>
             <li>
               <a href="chart.html">
@@ -398,7 +404,7 @@
           <div class="container-fluid">
             <div class="header-wrap">
               <form class="form-header" action="" method="POST">
-                <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
+                <input class="au-input au-input--xl" type="text" name="search" placeholder="Buscar datos y reportes..." />
                 <button class="au-btn--submit" type="submit">
                   <i class="zmdi zmdi-search"></i>
                 </button>
@@ -512,7 +518,20 @@
         </div>
       </div>
     </div>
+    @yield('script')
     <!-- END PAGE CONTAINER-->
+
+
+    <!-- GENERIC DIV MODAL-->
+            <!-- modal small -->
+            <div class="modal fade" id="smallmodal" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" aria-hidden="true">
+                
+            </div>
+
+
+            <!-- end modal small -->
+    <div id="all-modal" class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+    <!-- END GENERIC DIV MODAL-->
     
     <!-- FOOTER-->
                           <div class="row">
@@ -526,8 +545,11 @@
 @endguest
   </div>
 
-    <!-- Jquery JS-->
-    <script src="<?php echo e(asset('js/jquery-3.2.1.min.js'))?>"></script>
+    <!-- Datatable-->
+    <script src="<?php echo e(asset('js/datatable/dataTables.bootstrap4.min.js'))?>"></script>
+    <script src="<?php echo e(asset('js/datatable/dataTables.responsive.min.js'))?>"></script>
+    <script src="<?php echo e(asset('js/datatable/responsive.bootstrap4.min.js'))?>"></script>
+    <script src="<?php echo e(asset('js/datatable/jquery.dataTables.min.js'))?>"></script>
     <!-- Bootstrap JS-->
     <script src="<?php echo e(asset('js/bootstrap-4.1/popper.min.js')) ?>"></script>
     <script src="<?php echo e(asset('js/bootstrap-4.1/bootstrap.min.js')) ?>"></script>

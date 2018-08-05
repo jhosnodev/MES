@@ -24,6 +24,11 @@ Primary use:    Open Source
 # Text Color (text): #666666
 # Text Color Deep (Text, title): #333333
 
+# BFGlobal green #63CD0F
+# Dark green 
+# Second Green #95db57
+
+# light grey #e5e5e5
 ------------------------------------------------------------------*/
 /*------------------------------------------------------------------
 [Typography]
@@ -325,6 +330,7 @@ section {
 .page-content--bge5 {
     background: #e5e5e5;
     height: 100vh;
+    overflow: scroll;
 }
 
 .login-wrap {
@@ -823,16 +829,16 @@ section {
     right: 0;
     min-width: 65px;
     line-height: 43px;
-    border: 1px solid #e5e5e5;
+    border: 1px solid #63CD0F;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
-    background: #4272d7;
+    background: #63CD0F;
     margin-left: -3px;
 }
 
 .au-btn--submit:hover {
-    background: #3868cd;
+    background: #95DB57;
 }
 
 .au-btn--submit > i {
@@ -1530,7 +1536,7 @@ section {
 }
 
 .account-dropdown__item a:hover {
-    background: #4272d7;
+    background: #63cd0f;
     color: #fff;
 }
 
@@ -1557,7 +1563,7 @@ section {
 }
 
 .account-dropdown__footer a:hover {
-    background: #4272d7;
+    background: #95db57;
     color: #fff;
 }
 
@@ -1574,7 +1580,7 @@ section {
     left: 0;
     top: 0;
     bottom: 0;
-    background: #fff;
+    background: #95db57;
     overflow-y: auto;
 }
 ol, ul {
@@ -1619,6 +1625,7 @@ ol, ul {
 }
 
 .navbar-sidebar {
+    background: #95db57;
     padding: 35px;
     padding-bottom: 0;
 }
@@ -1635,11 +1642,13 @@ ol, ul {
 }
 
 .navbar-sidebar .navbar__list li a:hover {
-    color: #4272d7;
+    color: #fff;
+    background-color: #63CD0F;
+    border-radius: 5%;
 }
 
 .navbar-sidebar .navbar__list li.active > a {
-    color: #4272d7;
+    color: #63CD0F;
 }
 
 .has-sub {
@@ -1753,7 +1762,7 @@ ol, ul {
 }
 
 .header-mobile .navbar-mobile .navbar-mobile__list li a:hover {
-    color: #4272d7;
+    color: #95db57;
 }
 
 .header-mobile .navbar-mobile .navbar-mobile__list li a > i {
@@ -1787,8 +1796,8 @@ ol, ul {
 
 .navbar-mobile-sub__list {
     display: none;
-    padding-left: 30px;
-    background: #fff;
+    padding-left: 15px;
+    background: #e5e5e5;
 }
 
 .header-mobile .navbar-mobile .navbar-mobile-sub__list li a {
@@ -1921,7 +1930,7 @@ ol, ul {
 }
 
 .mess__footer a:hover, .email__footer a:hover, .notifi__footer a:hover {
-    color: #3868cd;
+    color: #95db57;
 }
 
 .mess-dropdown {

@@ -15,9 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/nuevo_proveedor', function () {
-    return view('compras.proveedores');
-});
+
 
 
 Route::get('/nuevo_item', function () {
@@ -41,5 +39,9 @@ Route::get('/perfil', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::resource('proveedor', 'ProveedorController');
+
 
 
