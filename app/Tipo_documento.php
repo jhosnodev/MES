@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tipo_documento extends Model
 {
-        protected $table = 'actividad_economicas';
+        protected $table = 'tipo_documentos';
     
-    protected $fillable = ['actividad_economica',];
+    protected $fillable = ['documento',];
 }

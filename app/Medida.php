@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Medida extends Model
 {
-       protected $table = 'actividad_economicas';
+       protected $table = 'medidas';
     
-    protected $fillable = ['actividad_economica',];
+    protected $fillable = ['unidad','detalle'];
 }

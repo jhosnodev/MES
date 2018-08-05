@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class InformeCondicion extends Model
 {
-        protected $table = 'actividad_economicas';
+        protected $table = 'informe_condiciones';
     
-    protected $fillable = ['actividad_economica',];
+    protected $fillable = ['informe_id','condiciones_id'];
 }

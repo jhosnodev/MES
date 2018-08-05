@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Linea_negocio extends Model
 {
-        protected $table = 'actividad_economicas';
+        protected $table = 'linea_negocios';
     
-    protected $fillable = ['actividad_economica',];
+    protected $fillable = ['linea_negocio',];
 }

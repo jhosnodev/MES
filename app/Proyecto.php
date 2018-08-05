@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Proyecto extends Model
 {
-        protected $table = 'actividad_economicas';
+        protected $table = 'proyectos';
     
-    protected $fillable = ['actividad_economica',];
+    protected $fillable = ['fecha_inicio','fecha_culminacion','descripcion','observaciones','antecedentes','factura_id','cliente_id','usuario_id'];
 }

@@ -20,7 +20,7 @@ class CreateSucursalsTable extends Migration
             $table->string('provincia');
             $table->string('pais');
             $table->string('telefono');
-            $table->boolean('principal');
+            $table->boolean('principal');//es o no la sucursal principal 
             $table->string('sucursalsCol1');
             $table->string('sucursalsCol2');
             $table->string('sucursalsCol3');

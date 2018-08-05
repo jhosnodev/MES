@@ -19,7 +19,6 @@ class CreateInformesTable extends Migration
             $table->string('asunto');
             $table->string('recomendaciones');
             $table->string('observaciones');
-            
             $table->datetime('fecha_realizacion');
             $table->string('contacto_id');
             $table->string('proyecto_id');

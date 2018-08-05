@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Nota extends Model
 {
-        protected $table = 'actividad_economicas';
+        protected $table = 'notas';
     
-    protected $fillable = ['actividad_economica',];
+    protected $fillable = ['fecha_emision','retenciones','estado','sub_total','motivo','tipo_moneda','tipo_documento_id','cliente_id','empresa_id','usuario_id'];
 }

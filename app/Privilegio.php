@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Privilegio extends Model
 {
-        protected $table = 'actividad_economicas';
+        protected $table = 'privilegios';
     
-    protected $fillable = ['actividad_economica',];
+    protected $fillable = ['modulo','nivel'];
 }

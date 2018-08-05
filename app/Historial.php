@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Historial extends Model
 {
-        protected $table = 'actividad_economicas';
+        protected $table = 'historial';
     
-    protected $fillable = ['actividad_economica',];
+    protected $fillable = ['movimiento','descripcion','modulo','usuario_id'];
 }

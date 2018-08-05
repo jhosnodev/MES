@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class IGV extends Model
 {
-       protected $table = 'actividad_economicas';
+       protected $table = 'i_g_vs';
     
-    protected $fillable = ['actividad_economica',];
+    protected $fillable = ['valor','fecha_creacion','fecha_activacion'];
 }

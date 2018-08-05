@@ -8,5 +8,5 @@ class Grupo extends Model
 {
        protected $table = 'grupos';
     
-    protected $fillable = ['grupos',];
+    protected $fillable = ['grupo',];
 }

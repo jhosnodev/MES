@@ -8,5 +8,5 @@ class ProveedorBanco extends Model
 {
         protected $table = 'actividad_economicas';
     
-    protected $fillable = ['actividad_economica',];
+    protected $fillable = ['banco_id','proveedor_id'];
 }
