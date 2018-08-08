@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@include('auth.login')
 
 @section('company', 'BF Global')
 @section('title', 'Inicio de Sesión')

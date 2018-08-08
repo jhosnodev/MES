@@ -17,9 +17,9 @@ class CreateProveedorContactosTable extends Migration
             $table->increments('id');
             $table->string('proveedor_id');
             $table->string('contacto_id');
-            $table->string('proveedor_contactosCol1');
-            $table->string('proveedor_contactosCol2');
-            $table->string('proveedor_contactosCol3');
+            $table->string('proveedor_contactosCol1')->nullable();
+            $table->string('proveedor_contactosCol2')->nullable();
+            $table->string('proveedor_contactosCol3')->nullable();
             $table->timestamps();
         });
     }

@@ -20,9 +20,9 @@ class CreateBancosTable extends Migration
             $table->string('cta_cte_us');
             $table->string('limite_credito');
             $table->string('dia_credito');
-            $table->string('bancosCol1');
-            $table->string('bancosCol2');
-            $table->string('bancosCol3');
+            $table->string('bancosCol1')->nullable();
+            $table->string('bancosCol2')->nullable();
+            $table->string('bancosCol3')->nullable();
             
             $table->timestamps();
         });

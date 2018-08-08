@@ -19,6 +19,9 @@ class CreateCronogramasTable extends Migration
             $table->datetime('fecha_inicio');
             $table->datetime('fecha_culminacion');
             $table->string('informe_id');
+            $table->string('cronogramaCol1')->nullable();
+            $table->string('cronogramaCol2')->nullable();
+            $table->string('cronogramaCol3')->nullable();
 
             $table->timestamps();
         });

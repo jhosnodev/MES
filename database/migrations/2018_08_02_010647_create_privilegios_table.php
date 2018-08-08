@@ -17,6 +17,9 @@ class CreatePrivilegiosTable extends Migration
             $table->increments('id');
             $table->string('modulo');
             $table->string('nivel');
+            $table->string('privilegiosCol1')->nullable();
+            $table->string('privilegiosCol2')->nullable();
+            $table->string('privilegiosCol3')->nullable();
             $table->timestamps();
         });
     }

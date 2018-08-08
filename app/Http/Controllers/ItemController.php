@@ -2,16 +2,9 @@
 
 namespace MultiEmpresa\Http\Controllers;
 
-use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
-use Validator;
-use Response;
-use MultiEmpresa\Proveedor;
-use View;
 
-
-
-class ProveedorController extends Controller
+class ItemController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,9 +13,7 @@ class ProveedorController extends Controller
      */
     public function index()
     {
-         $proveedores = Proveedor::all();
-
-        return view('proveedores.index', ['proveedores' => $proveedores]);
+        //
     }
 
     /**
@@ -32,7 +23,7 @@ class ProveedorController extends Controller
      */
     public function create()
     {
-        return view('proveedores.create');
+        //
     }
 
     /**
@@ -43,11 +34,7 @@ class ProveedorController extends Controller
      */
     public function store(Request $request)
     {
-        //truble w validations
-        //$this->validate($request,[ 'razon-social'=>'required', 'identificacion'=>'required']);
-        Proveedor::create($request->all());
-        //die(var_dump("todo el tiempo estoy pensando en ti"));
-        return redirect()->route('proveedor.index')->with('success','Registro creado satisfactoriamente');
+        //
     }
 
     /**

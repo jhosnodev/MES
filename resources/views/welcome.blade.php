@@ -4,15 +4,6 @@
 @section('company', 'BF Global')
 @section('title', 'Bienvenido')
 
-@guest
-	 @section('login')
-	 	
-	 @endsection
-@else
 @section('content')
-	 	@parent
-	 @endsection
-@endguest
-
-
-
+	<p>esto es una prueba</p>
+@endsection

@@ -17,9 +17,9 @@ class CreateProveedorBancosTable extends Migration
             $table->increments('id');
             $table->string('banco_id');
             $table->string('proveedor_id');
-            $table->string('proveedor_bancosCol1');
-            $table->string('proveedor_bancosCol2');
-            $table->string('proveedor_bancosCol3');
+            $table->string('proveedor_bancosCol1')->nullable();
+            $table->string('proveedor_bancosCol2')->nullable();
+            $table->string('proveedor_bancosCol3')->nullable();
             
             $table->timestamps();
         });

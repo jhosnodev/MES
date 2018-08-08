@@ -28,9 +28,9 @@ class CreateCondicionesTable extends Migration
             $table->string('responsable');
             $table->string('usuario_id');
             $table->string('proyecto_id');
-            $table->string('condicionesCol1');
-            $table->string('condicionesCol2');
-            $table->string('condicionesCol3');
+            $table->string('condicionesCol1')->nullable();
+            $table->string('condicionesCol2')->nullable();
+            $table->string('condicionesCol3')->nullable();
             $table->timestamps();
         });
     }

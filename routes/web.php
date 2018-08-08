@@ -15,23 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-
-
-Route::get('/nuevo_item', function () {
-    return view('items.items');
-});
-
-
-Route::get('/nuevo_contacto', function () {
-    return view('compras.proveedores');
-});
-
-
-Route::get('/nuevo_cliente', function () {
-    return view('ventas.clientes');
-});
-
 Route::get('/perfil', function () {
     return view('auth.prolife');
 });
@@ -42,6 +25,15 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::resource('proveedor', 'ProveedorController');
+
+
+Route::resource('cliente', 'ClienteController');
+
+
+Route::resource('item', 'ItemController');
+
+
+Route::resource('equipo', 'EquipoController');
 
 
 

@@ -64,9 +64,12 @@
 <body class="animsition">
   <div class="page-wrapper">
     @guest
-        @yield('guest-content')
 
-    @else
+       {{-- @section('guest-content')--}}
+          <p>hola extraño</p>
+        @endsection
+    @endguest
+    @auth
 
     <!-- HEADER MOBILE-->
     <header class="header-mobile d-block d-lg-none">
@@ -94,7 +97,7 @@
                 <i class="fas fa-truck"></i>Ventas</a>
               <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                 <li>
-                  <a href="#">Clientes</a>
+                  <a href="{{ route('cliente.index') }}">Clientes</a>
                 </li>
                 <li>
                   <a href="#">Vendedores</a>
@@ -154,7 +157,7 @@
                 <i class="fas fa-star"></i>Gestión de materiales</a>
               <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                 <li>
-                  <a href="#">Artículos</a>
+                  <a href="{{ route('item.index') }}">Artículos</a>
                 </li>
                 <li>
                   <a href="#">Kardex</a>
@@ -211,7 +214,7 @@
             </li>
       
             <li >
-              <a  href="#">
+              <a  href="{{ route('equipo.index') }}">
                 <i class="fas fa-gavel"></i>Gestión de activos</a>
             </li>
             <li>
@@ -253,7 +256,7 @@
                 <i class="fas fa-truck"></i>Ventas</a>
               <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                 <li>
-                  <a href="#">Clientes</a>
+                  <a href="{{ route('cliente.index') }}">Clientes</a>
                 </li>
                 <li>
                   <a href="#">Vendedores</a>
@@ -313,7 +316,7 @@
                 <i class="fas fa-star"></i>Gestión de materiales</a>
               <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                 <li>
-                  <a href="#">Artículos</a>
+                  <a href="{{ route('item.index') }}">Artículos</a>
                 </li>
                 <li>
                   <a href="#">Kardex</a>
@@ -370,7 +373,7 @@
             </li>
             
             <li >
-              <a  href="#">
+              <a  href="{{ route('equipo.index') }}">
                 <i class="fas fa-gavel"></i>Gestión de activos</a>
             </li>
             <li>
@@ -542,8 +545,9 @@
                             </div>
                         </div>
     <!-- END FOOTER-->
-@endguest
+
   </div>
+   @endauth
 
     <!-- Datatable-->
     <script src="<?php echo e(asset('js/datatable/dataTables.bootstrap4.min.js'))?>"></script>

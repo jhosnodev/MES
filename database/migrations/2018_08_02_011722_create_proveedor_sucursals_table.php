@@ -17,9 +17,9 @@ class CreateProveedorSucursalsTable extends Migration
             $table->increments('id');
             $table->string('sucursal_id');
             $table->string('proveedor_id');
-            $table->string('proveedor_sucursalsCol1');
-            $table->string('proveedor_sucursalsCol2');
-            $table->string('proveedor_sucursalsCol3');
+            $table->string('proveedor_sucursalsCol1')->nullable();
+            $table->string('proveedor_sucursalsCol2')->nullable();
+            $table->string('proveedor_sucursalsCol3')->nullable();
             $table->timestamps();
         });
     }
