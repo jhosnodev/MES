@@ -110,7 +110,8 @@ class ProveedorController extends Controller
 
 
         $ruta = "https://ruc.com.pe/api/beta/ruc";
-       
+
+
         $rucaconsultar = '10178520739';
 
         $data = array(
@@ -137,16 +138,13 @@ class ProveedorController extends Controller
         curl_close($ch);
 
         $leer_respuesta = json_decode($respuesta, true);
-        return $leer_respuesta;
         if (isset($leer_respuesta['errors'])) {
     //Mostramos los errores si los hay
-            echo $leer_respuesta['errors'];
+            return $leer_respuesta['errors'];
         } else {
     //Mostramos la respuesta
-            echo "Respuesta de la API:<br>";
-            print_r($leer_respuesta);
+            return($leer_respuesta);
         }
-        $identificacion = $request->identificacion;
-        return 'It´s alive! ';
+
     }
 }

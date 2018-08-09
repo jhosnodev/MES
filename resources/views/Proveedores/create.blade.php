@@ -9,28 +9,41 @@
 <div class="card col-md-12">
   <div class="card-header"><strong>Proveedor</strong> Nuevo</div>
   <div class="card-body">
-    <form id="regForm" action="#" method="POST">
+    <form id="regForm" action="{{route('proveedor.store')}}" method="POST">
     {{ csrf_field() }}
   <!-- One "tab" for each step in the form: -->
   <div class="tab">Datos:
-    <p><input placeholder="RUC" oninput="this.className = ''" onchange="consultaSunat()"name="identificacion" class="form-control"></p>
+    <p><input placeholder="RUC" oninput="this.className = ''"  name="identificacion" class="form-control"></p>
     <p><input placeholder="Nombre o razón Social" oninput="this.className = ''" name="razon_social" class="form-control"></p>
     <p><input placeholder="Website" oninput="this.className = ''" name="website" class="form-control"></p>
 
     <p><input type="check" placeholder="Last name..." oninput="this.className = ''" name="activo" class="form-control"></p>
   </div>
   <div class="tab">Contacto:
-    <p><input placeholder="E-mail" oninput="this.className = ''" name="mail"></p>
-    <p><input placeholder="Teléfono" oninput="this.className = ''" name="phone"></p>
+    <p><input placeholder="Nombre del Contacto" oninput="this.className = ''" name="persona"></p>
+    <p><input placeholder="Correo" oninput="this.className = ''" name="correo"></p>
+    <p><input placeholder="Teléfono" oninput="this.className = ''" name="telefono"></p>
+    <p><input placeholder="Cedúla" oninput="this.className = ''" name="cedula"></p>
+    <p><input placeholder="Día de Pago" oninput="this.className = ''" name="dia_pago"></p>
+    <p><input placeholder="Hora de Pago" oninput="this.className = ''" name="hora_pago"></p>
+    <p><input placeholder="Cargo" oninput="this.className = ''" name="cargo"></p>
+    <p><input placeholder="Día de Tolerancia" oninput="this.className = ''" name="dia_tolerancia"></p>
+    <p><input placeholder="Observaciones" oninput="this.className = ''" name="observaciones"></p>
   </div>
   <div class="tab">Sucursal:
-    <p><input placeholder="dd" oninput="this.className = ''" name="dd"></p>
-    <p><input placeholder="mm" oninput="this.className = ''" name="nn"></p>
-    <p><input placeholder="yyyy" oninput="this.className = ''" name="yyyy"></p>
+    <p><input placeholder="Dirección" oninput="this.className = ''" name="direccion"></p>
+    <p><input placeholder="Distrito" oninput="this.className = ''" name="distrito"></p>
+    <p><input placeholder="Provincia" oninput="this.className = ''" name="provincia"></p>
+    <p><input placeholder="País" oninput="this.className = ''" name="pais"></p>
+    <p><input placeholder="Teléfono" oninput="this.className = ''" name="telefono"></p>
+    <p><input placeholder="¿Es la sucursal Principal?" oninput="this.className = ''" name="principal"></p>
   </div>
   <div class="tab">Banco:
-    <p><input placeholder="Username..." oninput="this.className = ''" name="uname"></p>
-    <p><input placeholder="Password..." oninput="this.className = ''" name="pword" type="password"></p>
+    <p><input placeholder="Nombre de la entidad Bancaria" oninput="this.className = ''" name="nombre"></p>
+    <p><input placeholder="Cuenta Corriente (Soles)"  name="cta_cte_s" type="text"></p>
+    <p><input placeholder="Cuenta Coriente (USD)"  name="cta_cte_us" type="text"></p>
+    <p><input placeholder="Límite de Crédito" oninput="this.className = ''" name="limite_credito" type="text"></p>
+    <p><input placeholder="Día de crédito" oninput="this.className = ''" name="dia_credito" type="text"></p>
   </div>
   <div style="overflow:auto;">
     <div style="float:right;">
@@ -135,8 +148,8 @@ function consultaSunat(){
                     
                 if(data[0]!=undefined)
                 {
-                   /* $('[name=nombres]').val(data[0]['nombres']);
-                    $('[name=apellidos]').val(data[0]['apellidos']);
+                   /* $('[name=razon_social]').val(data[0]['nombre_o_razon_social']);
+                    $('[name=estado]').val(data[0]['estado_del_contribuyente']);
                     $('[name=numero_telefono]').val(data[0]['numero_telefono']);
                     $('[name=human_id]').val(data[0]['id']);
                     $('[name=tranca]').val("PASA");

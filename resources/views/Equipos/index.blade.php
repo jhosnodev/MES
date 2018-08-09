@@ -7,7 +7,7 @@
 
 
 <div class="card col-md-12">
-  <div class="card-header"><strong>Proveedor</strong> Nuevo</div>
+  <div class="card-header"><strong>Equipo</strong> Nuevo</div>
   <div class="card-body">
     <form id="regForm" action="#" method="POST">
     {{ csrf_field() }}
