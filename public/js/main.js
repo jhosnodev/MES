@@ -220,13 +220,13 @@
         data: {
           labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
           datasets: [
-            {
-              label: "My First dataset",
-              data: [78, 81, 80, 65, 58, 75, 60, 75, 65, 60, 60, 75],
-              borderColor: "transparent",
-              borderWidth: "0",
-              backgroundColor: "rgba(255,255,255,.3)"
-            }
+          {
+            label: "My First dataset",
+            data: [78, 81, 80, 65, 58, 75, 60, 75, 65, 60, 60, 75],
+            borderColor: "transparent",
+            borderWidth: "0",
+            backgroundColor: "rgba(255,255,255,.3)"
+          }
           ]
         },
         options: {
@@ -264,24 +264,24 @@
         data: {
           labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', ''],
           datasets: [
-            {
-              label: 'My First dataset',
-              backgroundColor: brandService,
-              borderColor: 'transparent',
-              pointHoverBackgroundColor: '#fff',
-              borderWidth: 0,
-              data: data1
+          {
+            label: 'My First dataset',
+            backgroundColor: brandService,
+            borderColor: 'transparent',
+            pointHoverBackgroundColor: '#fff',
+            borderWidth: 0,
+            data: data1
 
-            },
-            {
-              label: 'My Second dataset',
-              backgroundColor: brandProduct,
-              borderColor: 'transparent',
-              pointHoverBackgroundColor: '#fff',
-              borderWidth: 0,
-              data: data2
+          },
+          {
+            label: 'My Second dataset',
+            backgroundColor: brandProduct,
+            borderColor: 'transparent',
+            pointHoverBackgroundColor: '#fff',
+            borderWidth: 0,
+            data: data2
 
-            }
+          }
           ]
         },
         options: {
@@ -339,29 +339,29 @@
         type: 'doughnut',
         data: {
           datasets: [
-            {
-              label: "My First dataset",
-              data: [60, 40],
-              backgroundColor: [
-                '#00b5e9',
-                '#fa4251'
-              ],
-              hoverBackgroundColor: [
-                '#00b5e9',
-                '#fa4251'
-              ],
-              borderWidth: [
-                0, 0
-              ],
-              hoverBorderColor: [
-                'transparent',
-                'transparent'
-              ]
-            }
+          {
+            label: "My First dataset",
+            data: [60, 40],
+            backgroundColor: [
+            '#00b5e9',
+            '#fa4251'
+            ],
+            hoverBackgroundColor: [
+            '#00b5e9',
+            '#fa4251'
+            ],
+            borderWidth: [
+            0, 0
+            ],
+            hoverBorderColor: [
+            'transparent',
+            'transparent'
+            ]
+          }
           ],
           labels: [
-            'Products',
-            'Services'
+          'Products',
+          'Services'
           ]
         },
         options: {
@@ -411,24 +411,24 @@
         data: {
           labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', ''],
           datasets: [
-            {
-              label: 'My First dataset',
-              backgroundColor: brandService2,
-              borderColor: bd_brandService2,
-              pointHoverBackgroundColor: '#fff',
-              borderWidth: 0,
-              data: data3
+          {
+            label: 'My First dataset',
+            backgroundColor: brandService2,
+            borderColor: bd_brandService2,
+            pointHoverBackgroundColor: '#fff',
+            borderWidth: 0,
+            data: data3
 
-            },
-            {
-              label: 'My Second dataset',
-              backgroundColor: brandProduct2,
-              borderColor: bd_brandProduct2,
-              pointHoverBackgroundColor: '#fff',
-              borderWidth: 0,
-              data: data4
+          },
+          {
+            label: 'My Second dataset',
+            backgroundColor: brandProduct2,
+            borderColor: bd_brandProduct2,
+            pointHoverBackgroundColor: '#fff',
+            borderWidth: 0,
+            data: data4
 
-            }
+          }
           ]
         },
         options: {
@@ -505,25 +505,25 @@
         data: {
           labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', ''],
           datasets: [
-            {
-              label: 'My First dataset',
-              backgroundColor: brandService3,
-              borderColor: bd_brandService3,
-              pointHoverBackgroundColor: '#fff',
-              borderWidth: 0,
-              data: data5,
-              pointBackgroundColor: bd_brandService3
-            },
-            {
-              label: 'My Second dataset',
-              backgroundColor: brandProduct3,
-              borderColor: bd_brandProduct3,
-              pointHoverBackgroundColor: '#fff',
-              borderWidth: 0,
-              data: data6,
-              pointBackgroundColor: bd_brandProduct3
+          {
+            label: 'My First dataset',
+            backgroundColor: brandService3,
+            borderColor: bd_brandService3,
+            pointHoverBackgroundColor: '#fff',
+            borderWidth: 0,
+            data: data5,
+            pointBackgroundColor: bd_brandService3
+          },
+          {
+            label: 'My Second dataset',
+            backgroundColor: brandProduct3,
+            borderColor: bd_brandProduct3,
+            pointHoverBackgroundColor: '#fff',
+            borderWidth: 0,
+            data: data6,
+            pointBackgroundColor: bd_brandProduct3
 
-            }
+          }
           ]
         },
         options: {
@@ -586,13 +586,13 @@
         data: {
           labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
           datasets: [
-            {
-              label: "My First dataset",
-              data: [78, 81, 80, 64, 65, 80, 70, 75, 67, 85, 66, 68],
-              borderColor: "transparent",
-              borderWidth: "0",
-              backgroundColor: "#ccc",
-            }
+          {
+            label: "My First dataset",
+            data: [78, 81, 80, 64, 65, 80, 70, 75, 67, 85, 66, 68],
+            borderColor: "transparent",
+            borderWidth: "0",
+            backgroundColor: "#ccc",
+          }
           ]
         },
         options: {
@@ -628,29 +628,29 @@
         type: 'doughnut',
         data: {
           datasets: [
-            {
-              label: "My First dataset",
-              data: [60, 40],
-              backgroundColor: [
-                '#00b5e9',
-                '#fa4251'
-              ],
-              hoverBackgroundColor: [
-                '#00b5e9',
-                '#fa4251'
-              ],
-              borderWidth: [
-                0, 0
-              ],
-              hoverBorderColor: [
-                'transparent',
-                'transparent'
-              ]
-            }
+          {
+            label: "My First dataset",
+            data: [60, 40],
+            backgroundColor: [
+            '#00b5e9',
+            '#fa4251'
+            ],
+            hoverBackgroundColor: [
+            '#00b5e9',
+            '#fa4251'
+            ],
+            borderWidth: [
+            0, 0
+            ],
+            hoverBorderColor: [
+            'transparent',
+            'transparent'
+            ]
+          }
           ],
           labels: [
-            'Products',
-            'Services'
+          'Products',
+          'Services'
           ]
         },
         options: {
@@ -884,22 +884,22 @@
         data: {
           labels: ["January", "February", "March", "April", "May", "June", "July"],
           datasets: [
-            {
-              label: "My First dataset",
-              data: [65, 59, 80, 81, 56, 55, 40],
-              borderColor: "rgba(0, 123, 255, 0.9)",
-              borderWidth: "0",
-              backgroundColor: "rgba(0, 123, 255, 0.5)",
-              fontFamily: "Poppins"
-            },
-            {
-              label: "My Second dataset",
-              data: [28, 48, 40, 19, 86, 27, 90],
-              borderColor: "rgba(0,0,0,0.09)",
-              borderWidth: "0",
-              backgroundColor: "rgba(0,0,0,0.07)",
-              fontFamily: "Poppins"
-            }
+          {
+            label: "My First dataset",
+            data: [65, 59, 80, 81, 56, 55, 40],
+            borderColor: "rgba(0, 123, 255, 0.9)",
+            borderWidth: "0",
+            backgroundColor: "rgba(0, 123, 255, 0.5)",
+            fontFamily: "Poppins"
+          },
+          {
+            label: "My Second dataset",
+            data: [28, 48, 40, 19, 86, 27, 90],
+            borderColor: "rgba(0,0,0,0.09)",
+            borderWidth: "0",
+            backgroundColor: "rgba(0,0,0,0.07)",
+            fontFamily: "Poppins"
+          }
           ]
         },
         options: {
@@ -945,20 +945,20 @@
           labels: [["Eating", "Dinner"], ["Drinking", "Water"], "Sleeping", ["Designing", "Graphics"], "Coding", "Cycling", "Running"],
           defaultFontFamily: 'Poppins',
           datasets: [
-            {
-              label: "My First dataset",
-              data: [65, 59, 66, 45, 56, 55, 40],
-              borderColor: "rgba(0, 123, 255, 0.6)",
-              borderWidth: "1",
-              backgroundColor: "rgba(0, 123, 255, 0.4)"
-            },
-            {
-              label: "My Second dataset",
-              data: [28, 12, 40, 19, 63, 27, 87],
-              borderColor: "rgba(0, 123, 255, 0.7",
-              borderWidth: "1",
-              backgroundColor: "rgba(0, 123, 255, 0.5)"
-            }
+          {
+            label: "My First dataset",
+            data: [65, 59, 66, 45, 56, 55, 40],
+            borderColor: "rgba(0, 123, 255, 0.6)",
+            borderWidth: "1",
+            backgroundColor: "rgba(0, 123, 255, 0.4)"
+          },
+          {
+            label: "My Second dataset",
+            data: [28, 12, 40, 19, 63, 27, 87],
+            borderColor: "rgba(0, 123, 255, 0.7",
+            borderWidth: "1",
+            backgroundColor: "rgba(0, 123, 255, 0.5)"
+          }
           ]
         },
         options: {
@@ -995,21 +995,21 @@
           labels: ["January", "February", "March", "April", "May", "June", "July"],
           defaultFontFamily: "Poppins",
           datasets: [
-            {
-              label: "My First dataset",
-              borderColor: "rgba(0,0,0,.09)",
-              borderWidth: "1",
-              backgroundColor: "rgba(0,0,0,.07)",
-              data: [22, 44, 67, 43, 76, 45, 12]
-            },
-            {
-              label: "My Second dataset",
-              borderColor: "rgba(0, 123, 255, 0.9)",
-              borderWidth: "1",
-              backgroundColor: "rgba(0, 123, 255, 0.5)",
-              pointHighlightStroke: "rgba(26,179,148,1)",
-              data: [16, 32, 18, 26, 42, 33, 44]
-            }
+          {
+            label: "My First dataset",
+            borderColor: "rgba(0,0,0,.09)",
+            borderWidth: "1",
+            backgroundColor: "rgba(0,0,0,.07)",
+            data: [22, 44, 67, 43, 76, 45, 12]
+          },
+          {
+            label: "My Second dataset",
+            borderColor: "rgba(0, 123, 255, 0.9)",
+            borderWidth: "1",
+            backgroundColor: "rgba(0, 123, 255, 0.5)",
+            pointHighlightStroke: "rgba(26,179,148,1)",
+            data: [16, 32, 18, 26, 42, 33, 44]
+          }
           ]
         },
         options: {
@@ -1066,24 +1066,24 @@
           datasets: [{
             data: [45, 25, 20, 10],
             backgroundColor: [
-              "rgba(0, 123, 255,0.9)",
-              "rgba(0, 123, 255,0.7)",
-              "rgba(0, 123, 255,0.5)",
-              "rgba(0,0,0,0.07)"
+            "rgba(0, 123, 255,0.9)",
+            "rgba(0, 123, 255,0.7)",
+            "rgba(0, 123, 255,0.5)",
+            "rgba(0,0,0,0.07)"
             ],
             hoverBackgroundColor: [
-              "rgba(0, 123, 255,0.9)",
-              "rgba(0, 123, 255,0.7)",
-              "rgba(0, 123, 255,0.5)",
-              "rgba(0,0,0,0.07)"
+            "rgba(0, 123, 255,0.9)",
+            "rgba(0, 123, 255,0.7)",
+            "rgba(0, 123, 255,0.5)",
+            "rgba(0,0,0,0.07)"
             ]
 
           }],
           labels: [
-            "Green",
-            "Green",
-            "Green",
-            "Green"
+          "Green",
+          "Green",
+          "Green",
+          "Green"
           ]
         },
         options: {
@@ -1117,23 +1117,23 @@
           datasets: [{
             data: [45, 25, 20, 10],
             backgroundColor: [
-              "rgba(0, 123, 255,0.9)",
-              "rgba(0, 123, 255,0.7)",
-              "rgba(0, 123, 255,0.5)",
-              "rgba(0,0,0,0.07)"
+            "rgba(0, 123, 255,0.9)",
+            "rgba(0, 123, 255,0.7)",
+            "rgba(0, 123, 255,0.5)",
+            "rgba(0,0,0,0.07)"
             ],
             hoverBackgroundColor: [
-              "rgba(0, 123, 255,0.9)",
-              "rgba(0, 123, 255,0.7)",
-              "rgba(0, 123, 255,0.5)",
-              "rgba(0,0,0,0.07)"
+            "rgba(0, 123, 255,0.9)",
+            "rgba(0, 123, 255,0.7)",
+            "rgba(0, 123, 255,0.5)",
+            "rgba(0,0,0,0.07)"
             ]
 
           }],
           labels: [
-            "Green",
-            "Green",
-            "Green"
+          "Green",
+          "Green",
+          "Green"
           ]
         },
         options: {
@@ -1166,19 +1166,19 @@
           datasets: [{
             data: [15, 18, 9, 6, 19],
             backgroundColor: [
-              "rgba(0, 123, 255,0.9)",
-              "rgba(0, 123, 255,0.8)",
-              "rgba(0, 123, 255,0.7)",
-              "rgba(0,0,0,0.2)",
-              "rgba(0, 123, 255,0.5)"
+            "rgba(0, 123, 255,0.9)",
+            "rgba(0, 123, 255,0.8)",
+            "rgba(0, 123, 255,0.7)",
+            "rgba(0,0,0,0.2)",
+            "rgba(0, 123, 255,0.5)"
             ]
 
           }],
           labels: [
-            "Green",
-            "Green",
-            "Green",
-            "Green"
+          "Green",
+          "Green",
+          "Green",
+          "Green"
           ]
         },
         options: {
@@ -1209,13 +1209,13 @@
         data: {
           labels: ["Sun", "Mon", "Tu", "Wed", "Th", "Fri", "Sat"],
           datasets: [
-            {
-              label: "My First dataset",
-              data: [40, 55, 75, 81, 56, 55, 40],
-              borderColor: "rgba(0, 123, 255, 0.9)",
-              borderWidth: "0",
-              backgroundColor: "rgba(0, 123, 255, 0.5)"
-            }
+          {
+            label: "My First dataset",
+            data: [40, 55, 75, 81, 56, 55, 40],
+            borderColor: "rgba(0, 123, 255, 0.9)",
+            borderWidth: "0",
+            backgroundColor: "rgba(0, 123, 255, 0.5)"
+          }
           ]
         },
         options: {
@@ -1276,10 +1276,10 @@
         window.location.href = url;
       }
     });
-  
-  
+
+
   })(jQuery);
-(function ($) {
+  (function ($) {
   // USE STRICT
   "use strict";
 
@@ -1308,7 +1308,7 @@
 
   // Europe Map
   try {
-    
+
     var vmap1 = $('#vmap1');
     if(vmap1[0]) {
       vmap1.vectorMap( {
@@ -1327,7 +1327,7 @@
 
   // USA Map
   try {
-    
+
     var vmap2 = $('#vmap2');
 
     if(vmap2[0]) {
@@ -1341,12 +1341,12 @@
         selectedColor: null,
         hoverColor: null,
         colors: {
-            mo: '#001BFF',
-            fl: '#001BFF',
-            or: '#001BFF'
+          mo: '#001BFF',
+          fl: '#001BFF',
+          or: '#001BFF'
         },
         onRegionClick: function ( event, code, region ) {
-            event.preventDefault();
+          event.preventDefault();
         }
       });
     }
@@ -1357,7 +1357,7 @@
 
   // Germany Map
   try {
-    
+
     var vmap3 = $('#vmap3');
     if(vmap3[0]) {
       vmap3.vectorMap( {
@@ -1366,9 +1366,9 @@
         borderColor: '#fff',
         backgroundColor: '#fff',
         onRegionClick: function ( element, code, region ) {
-            var message = 'You clicked "' + region + '" which has the code: ' + code.toUpperCase();
+          var message = 'You clicked "' + region + '" which has the code: ' + code.toUpperCase();
 
-            alert( message );
+          alert( message );
         }
       });
     }
@@ -1379,7 +1379,7 @@
   
   // France Map
   try {
-    
+
     var vmap4 = $('#vmap4');
     if(vmap4[0]) {
       vmap4.vectorMap( {
@@ -1421,7 +1421,7 @@
   
   // Brazil Map
   try {
-    
+
     var vmap6 = $('#vmap6');
     if(vmap6[0]) {
       vmap6.vectorMap( {
@@ -1430,8 +1430,8 @@
         borderColor: '#fff',
         backgroundColor: '#fff',
         onRegionClick: function ( element, code, region ) {
-            var message = 'You clicked "' + region + '" which has the code: ' + code.toUpperCase();
-            alert( message );
+          var message = 'You clicked "' + region + '" which has the code: ' + code.toUpperCase();
+          alert( message );
         }
       });
     }
@@ -1461,8 +1461,8 @@
             });
           }
         }, {
-            offset: 'bottom-in-view'
-          });
+          offset: 'bottom-in-view'
+        });
 
       });
     });
@@ -1575,7 +1575,7 @@
       right_sidebar.removeClass("show-sidebar");
 
     });
- 
+
 
   // Sublist Sidebar
   try {
@@ -1643,7 +1643,7 @@
   "use strict";
 
   try {
-    
+
     $('[data-toggle="tooltip"]').tooltip();
 
   } catch (error) {
@@ -1666,5 +1666,21 @@
   } catch (error) {
     console.log(error);
   }
+
+
+
+//////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+////////////////////////////// STEP FORM JS //////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+
+
 
 })(jQuery);

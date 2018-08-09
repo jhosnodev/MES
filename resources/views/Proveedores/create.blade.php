@@ -5,61 +5,160 @@
 
 @section('content')
 
+
 <div class="card col-md-12">
-    <div class="card-header">
-        <strong>Proveedor</strong> Nuevo
+  <div class="card-header"><strong>Proveedor</strong> Nuevo</div>
+  <div class="card-body">
+    <form id="regForm" action="#" method="POST">
+    {{ csrf_field() }}
+  <!-- One "tab" for each step in the form: -->
+  <div class="tab">Datos:
+    <p><input placeholder="RUC" oninput="this.className = ''" onchange="consultaSunat()"name="identificacion" class="form-control"></p>
+    <p><input placeholder="Nombre o razón Social" oninput="this.className = ''" name="razon_social" class="form-control"></p>
+    <p><input placeholder="Website" oninput="this.className = ''" name="website" class="form-control"></p>
+
+    <p><input type="check" placeholder="Last name..." oninput="this.className = ''" name="activo" class="form-control"></p>
+  </div>
+  <div class="tab">Contacto:
+    <p><input placeholder="E-mail" oninput="this.className = ''" name="mail"></p>
+    <p><input placeholder="Teléfono" oninput="this.className = ''" name="phone"></p>
+  </div>
+  <div class="tab">Sucursal:
+    <p><input placeholder="dd" oninput="this.className = ''" name="dd"></p>
+    <p><input placeholder="mm" oninput="this.className = ''" name="nn"></p>
+    <p><input placeholder="yyyy" oninput="this.className = ''" name="yyyy"></p>
+  </div>
+  <div class="tab">Banco:
+    <p><input placeholder="Username..." oninput="this.className = ''" name="uname"></p>
+    <p><input placeholder="Password..." oninput="this.className = ''" name="pword" type="password"></p>
+  </div>
+  <div style="overflow:auto;">
+    <div style="float:right;">
+      <button type="button" id="prevBtn" onclick="nextPrev(-1)">Anterior</button>
+      <button type="button" id="nextBtn" onclick="nextPrev(1)">Siguiente</button>
     </div>
-    <form method="POST" action="{{ route('proveedor.store') }}"  role="form" method="post" class="form-horizontal">
-        {{ csrf_field() }}
-        <div class="card-body card-block">
-            
-            <div class="row form-group">
-                <div class="col col-md-3">
-                    <label for="identificacion" class=" form-control-label">Indentificación </label>
-                </div>
-                <div class="col-12 col-md-9">
-                    <input type="texts" id="identificacion" name="identificacion" placeholder="RUC/NIC" class="form-control">
-                    <span class="help-block">Consulta con el Sunat</span>
-                </div>
-            </div>
-            <div class="row form-group">
-                <div class="col col-md-3">
-                    <label for="razon_social" class=" form-control-label">Razón Social</label>
-                </div>
-                <div class="col-12 col-md-9">
-                    <input type="text" id="razon_social" name="razon_social" placeholder="Enter Password..." class="form-control">
-                    <span class="help-block">Razón social de la persona</span>
-                </div>
-            </div>
-            <div class="row form-group">
-                <div class="col col-md-3">
-                    <label for="website" class=" form-control-label">Website</label>
-                </div>
-                <div class="col-12 col-md-9">
-                    <input type="text" id="website" name="website" placeholder="Enter Password..." class="form-control">
-                    <span class="help-block">Website de la persona</span>
-                </div>
-            </div>
-            <div class="row form-group">
-                <div class="col col-md-3">
-                    <label for="estado" class=" form-control-label">Estado</label>
-                </div>
-                <div class="col-12 col-md-9">
-                    <input type="text" id="estado" name="estado" placeholder="Enter Password..." class="form-control">
-                    <span class="help-block">Estado de la persona</span>
-                </div>
-            </div>
-            
-        </div>
-        <div class="card-footer">
-            <button type="submit" class="btn btn-primary btn-sm">
-                <i class="fa fa-dot-circle-o"></i> Enviar
-            </button>
-            <button type="reset" class="btn btn-danger btn-sm">
-                <i class="fa fa-ban"></i> Limpiar
-            </button>
-        </div>
-    </form>
+  </div>
+  <!-- Circles which indicates the steps of the form: -->
+  <div style="text-align:center;margin-top:40px;">
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+  </div>
+</form>
+  </div>
 </div>
+
+
+<script>
+var currentTab = 0; // Current tab is set to be the first tab (0)
+showTab(currentTab); // Display the crurrent tab
+
+function showTab(n) {
+  // This function will display the specified tab of the form...
+  var x = document.getElementsByClassName("tab");
+  x[n].style.display = "block";
+  //... and fix the Previous/Next buttons:
+  if (n == 0) {
+    document.getElementById("prevBtn").style.display = "none";
+  } else {
+    document.getElementById("prevBtn").style.display = "inline";
+  }
+  if (n == (x.length - 1)) {
+    document.getElementById("nextBtn").innerHTML = "Guardar";
+  } else {
+    document.getElementById("nextBtn").innerHTML = "Siguiente";
+  }
+  //... and run a function that will display the correct step indicator:
+  fixStepIndicator(n)
+}
+
+function nextPrev(n) {
+  // This function will figure out which tab to display
+  var x = document.getElementsByClassName("tab");
+  // Exit the function if any field in the current tab is invalid:
+  if (n == 1 && !validateForm()) return false;
+  // Hide the current tab:
+  x[currentTab].style.display = "none";
+  // Increase or decrease the current tab by 1:
+  currentTab = currentTab + n;
+  // if you have reached the end of the form...
+  if (currentTab >= x.length) {
+    // ... the form gets submitted:
+    document.getElementById("regForm").submit();
+    return false;
+  }
+  // Otherwise, display the correct tab:
+  showTab(currentTab);
+}
+
+function validateForm() {
+  // This function deals with validation of the form fields
+  var x, y, i, valid = true;
+  x = document.getElementsByClassName("tab");
+  y = x[currentTab].getElementsByTagName("input");
+  // A loop that checks every input field in the current tab:
+  for (i = 0; i < y.length; i++) {
+    // If a field is empty...
+    if (y[i].value == "") {
+      // add an "invalid" class to the field:
+      y[i].className += " invalid";
+      // and set the current valid status to false
+      valid = false;
+    }
+  }
+  // If the valid status is true, mark the step as finished and valid:
+  if (valid) {
+    document.getElementsByClassName("step")[currentTab].className += " finish";
+  }
+  return valid; // return the valid status
+}
+
+function fixStepIndicator(n) {
+  // This function removes the "active" class of all steps...
+  var i, x = document.getElementsByClassName("step");
+  for (i = 0; i < x.length; i++) {
+    x[i].className = x[i].className.replace(" active", "");
+  }
+  //... and adds the "active" class on the current step:
+  x[n].className += " active";
+}
+
+function consultaSunat(){
+          var val = $('[name=identificacion]').val();
+        if(val.trim!='')
+            $.get('{{url('api/sunat')}}?nouser=1&identificacion='+val,function(data)
+            { 
+            console.log(data) ;
+                console.log(data);
+                var proveedor_id = data[0]['id'];
+                    
+                if(data[0]!=undefined)
+                {
+                   /* $('[name=nombres]').val(data[0]['nombres']);
+                    $('[name=apellidos]').val(data[0]['apellidos']);
+                    $('[name=numero_telefono]').val(data[0]['numero_telefono']);
+                    $('[name=human_id]').val(data[0]['id']);
+                    $('[name=tranca]').val("PASA");
+                    console.log('hola, vale');
+
+                    */
+                }
+                else
+                {
+                  console.log('Jogä');
+                  /*
+                    $('[name=cedula]').val('');
+                    alert('Usuario foraneo a la instituación o ya registrado');
+                    $('[name=propio]').val("foraneo"); 
+                    console.log('Chao, vale')
+                    */
+                }
+            });
+      
+}
+</script>
+
+
 
 @endsection

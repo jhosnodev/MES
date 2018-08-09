@@ -23,11 +23,11 @@ class ProveedorController extends Controller
      */
     public function index()
     {
-         $proveedores = Proveedor::all();
+       $proveedores = Proveedor::all();
          //die(var_dump($proveedores));
 
-        return view('proveedores.index', ['proveedores' => $proveedores]);
-    }
+       return view('proveedores.index', ['proveedores' => $proveedores]);
+   }
 
     /**
      * Show the form for creating a new resource.
@@ -62,10 +62,10 @@ class ProveedorController extends Controller
      */
     public function show($id)
     {
-       $proveedor = Proveedor::findOrFail($id);
+     $proveedor = Proveedor::findOrFail($id);
 
-        return view('proveedores.show', ['proveedor' => $proveedor]);
-    }
+     return view('proveedores.show', ['proveedor' => $proveedor]);
+ }
 
     /**
      * Show the form for editing the specified resource.
@@ -102,6 +102,52 @@ class ProveedorController extends Controller
     public function destroy($id)
     {
         Proveedor::findOrFail($id)->delete();
-         return redirect()->route('proveedor.index')->with('success','Registro eliminado satisfactoriamente');
+        return redirect()->route('proveedor.index')->with('success','Registro eliminado satisfactoriamente');
+    }
+
+    public function consulta(Request $request)
+    {
+
+
+        $ruta = "https://ruc.com.pe/api/beta/ruc";
+        $token = "a2f8caf2-482a-4025-aa06-a24abeee1b4d-00eaf510-44bf-4205-84aa-44ddaac2eb8e";
+
+        $rucaconsultar = '10178520739';
+
+        $data = array(
+            "token" => $token,
+            "ruc"   => $rucaconsultar
+        );
+
+        $data_json = json_encode($data);
+
+// Invocamos el servicio a ruc.com.pe
+// Ejemplo para JSON
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $ruta);
+        curl_setopt(
+            $ch, CURLOPT_HTTPHEADER, array(
+                'Content-Type: application/json',
+            )
+        );
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_POSTFIELDS,$data_json);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $respuesta  = curl_exec($ch);
+        curl_close($ch);
+
+        $leer_respuesta = json_decode($respuesta, true);
+        return $leer_respuesta;
+        if (isset($leer_respuesta['errors'])) {
+    //Mostramos los errores si los hay
+            echo $leer_respuesta['errors'];
+        } else {
+    //Mostramos la respuesta
+            echo "Respuesta de la API:<br>";
+            print_r($leer_respuesta);
+        }
+        $identificacion = $request->identificacion;
+        return 'It´s alive! ';
     }
 }

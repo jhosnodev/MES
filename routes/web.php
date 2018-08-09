@@ -11,6 +11,8 @@
 |
 */
 
+Route::get('api/sunat', 'ProveedorController@consulta');
+
 Route::get('/', function () {
     return view('welcome');
 });
