@@ -27,7 +27,7 @@
   <div class="tab-pane fade" id="banco" role="tabpanel" aria-labelledby="banco-tab">.4.</div>
 </div>
   
-  <a href="#" class="btn btn-block btn-success next-step btnNext">Siguiente</a>
+  <a href="#" class="btn btn-block btn-success next-step">Siguiente</a>
 </div>
 
 <script>

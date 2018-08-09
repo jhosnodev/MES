@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use Validator;
 use Response;
 use MultiEmpresa\Proveedor;
+use MultiEmpresa\Contacto;
+use MultiEmpresa\Banco;
+use MultiEmpresa\Sucursal;
 use View;
 
 
@@ -21,6 +24,7 @@ class ProveedorController extends Controller
     public function index()
     {
          $proveedores = Proveedor::all();
+         //die(var_dump($proveedores));
 
         return view('proveedores.index', ['proveedores' => $proveedores]);
     }
@@ -58,7 +62,9 @@ class ProveedorController extends Controller
      */
     public function show($id)
     {
-        //
+       $proveedor = Proveedor::findOrFail($id);
+
+        return view('proveedores.show', ['proveedor' => $proveedor]);
     }
 
     /**
@@ -69,7 +75,9 @@ class ProveedorController extends Controller
      */
     public function edit($id)
     {
-        //
+        $proveedor = Proveedor::findOrFail($id);
+
+        return view('proveedores.edit', ['proveedor' => $proveedor]);
     }
 
     /**
@@ -81,7 +89,8 @@ class ProveedorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Proveedor::find($id)->update($request->all());
+        return redirect()->route('proveedor.index')->with('success','Registro actualizado satisfactoriamente');
     }
 
     /**
@@ -92,6 +101,7 @@ class ProveedorController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Proveedor::findOrFail($id)->delete();
+         return redirect()->route('proveedor.index')->with('success','Registro eliminado satisfactoriamente');
     }
 }

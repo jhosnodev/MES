@@ -63,13 +63,18 @@
 </head>
 <body class="animsition">
   <div class="page-wrapper">
-    @guest
 
-       {{-- @section('guest-content')--}}
-          <p>hola extraño</p>
-        @endsection
-    @endguest
-    @auth
+
+            @if (Route::has('login'))
+                <div class="top-right links">
+                    @auth
+                        <a href="{{ url('/home') }}">Home</a>
+                    @else
+                        <a href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('register') }}">Register</a>
+                    @endauth
+                </div>
+            @endif
 
     <!-- HEADER MOBILE-->
     <header class="header-mobile d-block d-lg-none">
@@ -462,7 +467,7 @@
                       <img src="<?php echo e(asset('img/icon/avatar-01.jpg')) ?>" alt="John Doe" class="" />
                     </div>
                     <div class="content">
-                      <a class="js-acc-btn" href="#">{{ Auth::user()->name }}</a>
+                      <a class="js-acc-btn" href="#">{{-- Auth::user()->name --}}</a>
                     </div>
                     <div class="account-dropdown js-dropdown">
                       <div class="info clearfix">
@@ -473,9 +478,9 @@
                         </div>
                         <div class="content">
                           <h5 class="name">
-                            <a href="<?php echo e(url('perfil')); ?>">{{ Auth::user()->name }}</a>
+                            <a href="<?php echo e(url('perfil')); ?>">{{-- Auth::user()->name --}}</a>
                           </h5>
-                          <span class="email">{{ Auth::user()->email }}</span>
+                          <span class="email">{{-- Auth::user()->email --}}</span>
                         </div>
                       </div>
                       <div class="account-dropdown__body">
@@ -547,7 +552,7 @@
     <!-- END FOOTER-->
 
   </div>
-   @endauth
+
 
     <!-- Datatable-->
     <script src="<?php echo e(asset('js/datatable/dataTables.bootstrap4.min.js'))?>"></script>
