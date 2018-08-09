@@ -110,8 +110,7 @@ class ProveedorController extends Controller
 
 
         $ruta = "https://ruc.com.pe/api/beta/ruc";
-        $token = "a2f8caf2-482a-4025-aa06-a24abeee1b4d-00eaf510-44bf-4205-84aa-44ddaac2eb8e";
-
+       
         $rucaconsultar = '10178520739';
 
         $data = array(
