@@ -6,7 +6,7 @@
 @section('content')
 <div class="card col-md-12">
     <div class="card-header">
-        <strong>Proveedor saads</strong> {{$proveedor->razon_social}}
+        <strong>Proveedor</strong> {{$proveedor->razon_social}}
     </div>
     <form method="POST" action="{{ route('proveedor.update',$proveedor->id) }}"  role="form" class="form-horizontal">
     {{--<form method="POST" action=" {{ action('ProveedorController@show', $proveedor->id )}}"  role="form"  class="form-horizontal">--}}
@@ -56,9 +56,7 @@
             <button type="submit" class="btn btn-primary btn-sm">
                 <i class="fa fa-dot-circle-o"></i> Enviar
             </button>
-            <button type="reset" class="btn btn-danger btn-sm">
-                <i class="fa fa-ban"></i> Limpiar
-            </button>
+
         </div>
     </form>
 </div>

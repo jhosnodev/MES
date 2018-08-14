@@ -12,9 +12,9 @@
 
 
 
-<div class="table-data__tool">
 
-    <div class="table-data__tool-right float-right">
+
+    <div class="table-data__tool-right col-md-4 ml-auto">
 
         <a href="{{ route('proveedor.create') }}" id="create-trigger" class="au-btn au-btn-icon au-btn--green au-btn--small text-right add-modal">
             <i class="zmdi zmdi-plus"></i>Agregar Proveedor
@@ -22,7 +22,7 @@
 
 
     </div>
-</div>
+
 <div class="table-responsive table-responsive-data2">
     <table class="table table-data2">
         <thead>
@@ -30,7 +30,6 @@
                 <th>ID</th>
                 <th>RUC/NIC</th>
                 <th>Razón Social</th>
-                <th>date</th>
                 <th></th>
             </tr>
         </thead>
@@ -45,7 +44,6 @@
                     {{ $proveedor->identificacion}}
                 </td>
                 <td>{{ $proveedor->razon_social}}</td>
-                <td>{{ $proveedor->id}}</td>
                 <td>
                     <div class="table-data-feature">
                         <a href="{{action('ProveedorController@show', $proveedor->id)}}" class="item" data-toggle="tooltip" data-placement="top" title="Mostrar"><i class="zmdi zmdi-eye"></i></a>
@@ -69,8 +67,6 @@
     </table>
 </div>
 <!-- END DATA TABLE -->
-</div>
-</div>
 
 
 

@@ -6,11 +6,15 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
 use Validator;
 use Response;
-use MultiEmpresa\Equipo;
+use MultiEmpresa\Proveedor;
+use MultiEmpresa\Contacto;
+use MultiEmpresa\Cliente;;
+use MultiEmpresa\ProveedorContacto;
+use MultiEmpresa\ClienteContacto;
+
 use View;
 
-
-class EquipoController extends Controller
+class ContactoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,9 +23,7 @@ class EquipoController extends Controller
      */
     public function index()
     {
-        $equipos = Equipo::all();
-
-        return view('Equipos.index', ['equipos' => $equipos]);
+        //
     }
 
     /**
@@ -29,9 +31,22 @@ class EquipoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id, $tipo)
     {
-        return view('equipos.create');
+        $tipo = $request->tipo;
+        $id = $request->id;
+        return die(var_dump($tipo, $id));
+        if ($tipo == "PROVEEDOR") {
+            $proveedor = Proveedor::findOrFail($id);
+            $proveedorContacto = new ProveedorContacto();
+            $proveedorContacto->proveedor_id = $proveedor->id;
+            $proveedorContacto->contacto_id = $contacto->id;
+            $proveedorContacto->save();
+            }else{
+
+            }
+
+        return view('Contactos.create');
     }
 
     /**
@@ -53,11 +68,7 @@ class EquipoController extends Controller
      */
     public function show($id)
     {
-           $equipos = Equipo::findOrFail($id);
-
-     
-
-     return view('Equipos.show', ['equipos' => $equipos]);
+        //
     }
 
     /**
@@ -68,9 +79,7 @@ class EquipoController extends Controller
      */
     public function edit($id)
     {
-        $equipo = Equipo::findOrFail($id);
-
-        return view('Equipos.edit', ['equipo' => $equipo]);
+        //
     }
 
     /**
@@ -82,8 +91,7 @@ class EquipoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Equipo::find($id)->update($request->all());
-        return redirect()->route('Equipos.index')->with('success','Registro actualizado satisfactoriamente');
+        //
     }
 
     /**
@@ -94,7 +102,6 @@ class EquipoController extends Controller
      */
     public function destroy($id)
     {
-        Equipo::findOrFail($id)->delete();
-        return redirect()->route('Equipo.index')->with('success','Registro eliminado satisfactoriamente');
+        //
     }
 }

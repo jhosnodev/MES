@@ -50,7 +50,7 @@
       <option value="VIERNES">Viernes</option>
     </select></p>
     <p><select name="dia_credito" id="dia_credito" class="form-control" placeholder="Día de Crédito" oninput="this.className = ''"  tabindex="9">
-      <option value="">Día de Pago</option>
+      <option value="">Día de Crédito</option>
       <option value="LUNES">Lunes</option>
       <option value="MARTES">Martes</option>
       <option value="MIÉRCOLES">Miércoles</option>
@@ -61,7 +61,7 @@
     <p><input class="form-control" placeholder="límite de crédito" oninput="this.className = ''" name="limite_credito" tabindex="10" type="number"></p>
     <p><input class="form-control" placeholder="Cargo" oninput="this.className = ''" name="cargo" tabindex="11"></p>
     <p><select name="dia_tolerancia" id="dia_tolerancia" class="form-control" placeholder="Día de Tolerancia" oninput="this.className = ''"  tabindex="9">
-      <option value="">Día de Pago</option>
+      <option value="">Día de Tolerancia</option>
       <option value="LUNES">Lunes</option>
       <option value="MARTES">Martes</option>
       <option value="MIÉRCOLES">Miércoles</option>
@@ -182,24 +182,21 @@ function consultaSunat(){
 var val = $('[name=identificacion]').val();
         if(val.trim!='')
             $.get('{{url('api/sunat')}}?identificacion='+val,function(data)
-            { 
-            console.log(data) ;
-                
-                
+            {        
                     
-                if(data[0]!=undefined)
+                if(data.success)
                 {
-                    $('[name=razon_social]').val(data[0]['nombre_o_razon_social']);
-                    $('[name=activo]').val(data[0]['estado_del_contribuyente']);
-                    $('[name=telefono]').val(data[0]['numero_telefono']);
-                    $('[name=provincia]').val(data[0]['provincia']);
-                    $('[name=distrito]').val(data[0]['distrito']);
-                    $('[name=direccion]').val(data[0]['direccion_completa']);
+                    $('[name=razon_social]').val(data.entity.nombre_o_razon_social);
+                    $('[name=estado]').val(data.entity.estado_del_contribuyente);
+                    $('[name=telefono]').val(data.entity.numero_telefono);
+                    $('[name=provincia]').val(data.entity.provincia);
+                    $('[name=distrito]').val(data.entity.distrito);
+                    $('[name=direccion]').val(data.entity.direccion_completa);
                 }
                 else
                 {
-                   console.log('seamos arte <3');
-                   // alert(data[0]);
+                 
+                   alert(data.error);
              
 
                 }

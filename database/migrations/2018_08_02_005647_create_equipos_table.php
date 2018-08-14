@@ -20,8 +20,6 @@ class CreateEquiposTable extends Migration
             $table->string('familia');
             $table->string('codigo');
             $table->string('descripcion');
-            $table->string('medida');
-            $table->string('peso');
             $table->float('precio');
             $table->string('imagen');
             $table->string('detalle');
@@ -31,9 +29,6 @@ class CreateEquiposTable extends Migration
             $table->integer('stock_min');
             $table->integer('stock_max');
             $table->string('numero_serie');
-            $table->string('fecha_incorporacion');
-            $table->string('medida_id');
-            $table->string('linea_negocia_id');
             $table->string('equipoCol1')->nullable();
             $table->string('equipoCol2')->nullable();
             $table->string('equipoCol3')->nullable();

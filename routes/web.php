@@ -32,10 +32,21 @@ Route::resource('proveedor', 'ProveedorController');
 Route::resource('cliente', 'ClienteController');
 
 
+
 Route::resource('item', 'ItemController');
 
 
 Route::resource('equipo', 'EquipoController');
+
+
+Route::resource('contacto', 'ContactoController');
+Route::get('contacto/create','ContactoController@create');
+
+
+Route::resource('sucursal', 'SucursalController');
+
+
+Route::resource('banco', 'BancoController');
 
 
 

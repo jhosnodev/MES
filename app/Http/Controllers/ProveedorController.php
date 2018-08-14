@@ -203,7 +203,7 @@ class ProveedorController extends Controller
         curl_close($ch);
 
         $leer_respuesta = json_decode($respuesta, true);
-
+        
 
       
 

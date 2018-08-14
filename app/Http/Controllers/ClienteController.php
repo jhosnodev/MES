@@ -99,6 +99,7 @@ class ClienteController extends Controller
        $sucursal->pais = $request->pais;
        $sucursal->telefono = $request->telefono;
        $sucursal->principal = $request->principal;
+       $sucursal->save();
 
 
         $clienteSucursal = new clienteSucursal();

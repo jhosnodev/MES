@@ -20,7 +20,6 @@ class CreateItemsTable extends Migration
             $table->string('familia');
             $table->string('codigo');
             $table->string('descripcion');
-            $table->string('medida');
             $table->string('peso');
             $table->float('precio');
             $table->string('imagen');
@@ -31,7 +30,6 @@ class CreateItemsTable extends Migration
             $table->integer('stock_min');
             $table->integer('stock_max');
             $table->string('numero_serie');
-            $table->string('fecha_incorporacion');
             $table->string('medida_id');
             $table->string('linea_negocia_id');
             $table->string('itemsCol1')->nullable();

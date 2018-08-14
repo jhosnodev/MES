@@ -2,15 +2,9 @@
 
 namespace MultiEmpresa\Http\Controllers;
 
-use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
-use Validator;
-use Response;
-use MultiEmpresa\Equipo;
-use View;
 
-
-class EquipoController extends Controller
+class SucursalController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,9 +13,7 @@ class EquipoController extends Controller
      */
     public function index()
     {
-        $equipos = Equipo::all();
-
-        return view('Equipos.index', ['equipos' => $equipos]);
+        //
     }
 
     /**
@@ -31,7 +23,7 @@ class EquipoController extends Controller
      */
     public function create()
     {
-        return view('equipos.create');
+        //
     }
 
     /**
@@ -53,11 +45,7 @@ class EquipoController extends Controller
      */
     public function show($id)
     {
-           $equipos = Equipo::findOrFail($id);
-
-     
-
-     return view('Equipos.show', ['equipos' => $equipos]);
+        //
     }
 
     /**
@@ -68,9 +56,7 @@ class EquipoController extends Controller
      */
     public function edit($id)
     {
-        $equipo = Equipo::findOrFail($id);
-
-        return view('Equipos.edit', ['equipo' => $equipo]);
+        //
     }
 
     /**
@@ -82,8 +68,7 @@ class EquipoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Equipo::find($id)->update($request->all());
-        return redirect()->route('Equipos.index')->with('success','Registro actualizado satisfactoriamente');
+        //
     }
 
     /**
@@ -94,7 +79,6 @@ class EquipoController extends Controller
      */
     public function destroy($id)
     {
-        Equipo::findOrFail($id)->delete();
-        return redirect()->route('Equipo.index')->with('success','Registro eliminado satisfactoriamente');
+        //
     }
 }

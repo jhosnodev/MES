@@ -12,10 +12,10 @@ class ClienteContacto extends Model
 
         public function cliente()
     {
-    	return $this->belongsTo('MultiEmpresa\User')
+    	return $this->belongsTo('MultiEmpresa\Cliente');
     }
         public function contacto()
     {
-    	return $this->belongsTo('MultiEmpresa\User')
+    	return $this->belongsTo('MultiEmpresa\Contacto');
     }
 }

@@ -158,24 +158,23 @@ function consultaSunat(){
 var val = $('[name=identificacion]').val();
         if(val.trim!='')
             $.get('{{url('api/sunat')}}?identificacion='+val,function(data)
-            { 
-            console.log(data) ;
+            {        
                 
                 
                     
-                if(data[0]!=undefined)
+                if(data.success)
                 {
-                    $('[name=razon_social]').val(data[0]['nombre_o_razon_social']);
-                    $('[name=activo]').val(data[0]['estado_del_contribuyente']);
-                    $('[name=telefono]').val(data[0]['numero_telefono']);
-                    $('[name=provincia]').val(data[0]['provincia']);
-                    $('[name=distrito]').val(data[0]['distrito']);
-                    $('[name=direccion]').val(data[0]['direccion_completa']);
+                    $('[name=razon_social]').val(data.entity.nombre_o_razon_social);
+                    $('[name=activo]').val(data.entity.estado_del_contribuyente);
+                    $('[name=telefono]').val(data.entity.numero_telefono);
+                    $('[name=provincia]').val(data.entity.provincia);
+                    $('[name=distrito]').val(data.entity.distrito);
+                    $('[name=direccion]').val(data.entity.direccion_completa);
                 }
                 else
                 {
-                   console.log('seamos arte <3');
-                   // alert(data[0]);
+                 
+                   alert(data.error);
              
 
                 }
