@@ -3,6 +3,9 @@
 namespace MultiEmpresa\Http\Controllers;
 
 use Illuminate\Http\Request;
+use MultiEmpresa\Item;
+use MultiEmpresa\Medida;
+use MultiEmpresa\Linea_negocio;
 
 class ItemController extends Controller
 {
@@ -13,7 +16,9 @@ class ItemController extends Controller
      */
     public function index()
     {
-        //
+        $items = Item::all();
+
+        return view('Items.index', ['items' => $items]);
     }
 
     /**
@@ -23,7 +28,7 @@ class ItemController extends Controller
      */
     public function create()
     {
-        //
+        return view('items.create');
     }
 
     /**
@@ -45,7 +50,11 @@ class ItemController extends Controller
      */
     public function show($id)
     {
-        //
+        $item = Item::findOrFail($id);
+
+     
+
+     return view('Items.show', ['item' => $item]);
     }
 
     /**
@@ -56,7 +65,9 @@ class ItemController extends Controller
      */
     public function edit($id)
     {
-        //
+        $item = Item::findOrFail($id);
+
+        return view('Items.edit', ['item' => $item]);
     }
 
     /**
@@ -68,7 +79,8 @@ class ItemController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Item::find($id)->update($request->all());
+        return redirect()->route('Items.index')->with('success','Registro actualizado satisfactoriamente');
     }
 
     /**
@@ -79,6 +91,7 @@ class ItemController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Item::findOrFail($id)->delete();
+        return redirect()->route('Items.index')->with('success','Registro eliminado satisfactoriamente');
     }
 }

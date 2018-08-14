@@ -7,7 +7,7 @@
 
 @section('content')
 	 	@parent
-	 	<p>Seamos Arte <3</p>
+	 	<p>Página de escritorio</p>
 	 @endsection
 
 

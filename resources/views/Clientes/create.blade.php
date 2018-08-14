@@ -16,6 +16,7 @@
     <fieldset>
     <p><input placeholder="RUC" oninput="this.className = ''" onchange="consultaSunat()" name="identificacion" class="form-control" tabindex="1"></p>
     <p><input placeholder="Nombre o razón Social" oninput="this.className = ''" name="razon_social" class="form-control" tabindex="2"></p>
+    <p><input placeholder="Website" oninput="this.className = ''" name="website" class="form-control" tabindex="2"></p>
     <p><select placeholder="Ejecutivo de Ventas" oninput="this.className = ''" name="ejecutivo_ventas_id" class="form-control" tabindex="3">
       <option value="">Ejecutivo de ventas</option>
       <option value="1">Juan Jimenez</option>
@@ -25,13 +26,13 @@
     </p>
     <p><select placeholder="Actividad Económica" oninput="this.className = ''" name="actividad_economica_id" class="form-control" tabindex="3">
       <option value="">Actividad Económica</option>
-      <option value="1">Actividad económica 1</option>
-      <option value="2">Actividad económica 2</option>
-      <option value="3">Actividad económica 3</option>
+      <option value="Actividad económica 1">Actividad económica 1</option>
+      <option value="Actividad económica 2">Actividad económica 2</option>
+      <option value="Actividad económica 3">Actividad económica 3</option>
     </select>
     </p>
     <p><input placeholder="Grupo" oninput="this.className = ''" name="grupo" class="form-control" tabindex="4"></p>
-    <p><input placeholder="Estado" oninput="this.className = ''" name="activo" class="form-control" tabindex="4"></p>
+    <p><input placeholder="Estado" oninput="this.className = ''" name="estado" class="form-control" tabindex="4"></p>
     </fieldset>
   </div>
   <div class="tab">Contacto:
@@ -48,9 +49,26 @@
       <option value="JUEVES">Jueves</option>
       <option value="VIERNES">Viernes</option>
     </select></p>
+    <p><select name="dia_credito" id="dia_credito" class="form-control" placeholder="Día de Crédito" oninput="this.className = ''"  tabindex="9">
+      <option value="">Día de Pago</option>
+      <option value="LUNES">Lunes</option>
+      <option value="MARTES">Martes</option>
+      <option value="MIÉRCOLES">Miércoles</option>
+      <option value="JUEVES">Jueves</option>
+      <option value="VIERNES">Viernes</option>
+    </select></p>
     <p><input class="form-control" placeholder="Hora de Pago" oninput="this.className = ''" name="hora_pago" tabindex="10" type="time"></p>
+    <p><input class="form-control" placeholder="límite de crédito" oninput="this.className = ''" name="limite_credito" tabindex="10" type="number"></p>
     <p><input class="form-control" placeholder="Cargo" oninput="this.className = ''" name="cargo" tabindex="11"></p>
-    <p><input class="form-control" placeholder="Día de Tolerancia" oninput="this.className = ''" name="dia_tolerancia" tabindex="12"></p>
+    <p><select name="dia_tolerancia" id="dia_tolerancia" class="form-control" placeholder="Día de Tolerancia" oninput="this.className = ''"  tabindex="9">
+      <option value="">Día de Pago</option>
+      <option value="LUNES">Lunes</option>
+      <option value="MARTES">Martes</option>
+      <option value="MIÉRCOLES">Miércoles</option>
+      <option value="JUEVES">Jueves</option>
+      <option value="VIERNES">Viernes</option>
+    </select></p>
+
     <p><textarea name="observaciones" id="observaciones" cols="30" rows="2" class="form-control" placeholder="observaciones" tabindex="13" oninput="this.className = ''"></textarea>
         
     </fieldset>

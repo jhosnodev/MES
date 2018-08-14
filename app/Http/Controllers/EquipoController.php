@@ -19,7 +19,7 @@ class EquipoController extends Controller
      */
     public function index()
     {
-                 $equipo = Equipo::all();
+        $equipo = Equipo::all();
 
         return view('Equipos.index', ['equipo' => $equipo]);
     }
@@ -31,7 +31,7 @@ class EquipoController extends Controller
      */
     public function create()
     {
-        //
+        return view('equipos.create');
     }
 
     /**
@@ -87,6 +87,7 @@ class EquipoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Equipo::findOrFail($id)->delete();
+        return redirect()->route('Equipo.index')->with('success','Registro eliminado satisfactoriamente');
     }
 }
