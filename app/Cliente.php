@@ -12,6 +12,6 @@ class Cliente extends Model
 
         public function user()
     {
-    	return $this->belongsTo('MultiEmpresa\User')
+    	return $this->belongsTo('MultiEmpresa\User');
     }
 }

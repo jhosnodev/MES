@@ -10,6 +10,9 @@ use MultiEmpresa\Proveedor;
 use MultiEmpresa\Contacto;
 use MultiEmpresa\Banco;
 use MultiEmpresa\Sucursal;
+use MultiEmpresa\ProveedorContacto;
+use MultiEmpresa\ProveedorBanco;
+use MultiEmpresa\ProveedorSucursal;
 use View;
 
 
@@ -49,8 +52,64 @@ class ProveedorController extends Controller
     {
         //truble w validations
         //$this->validate($request,[ 'razon-social'=>'required', 'identificacion'=>'required']);
-        Proveedor::create($request->all());
-        //die(var_dump("todo el tiempo estoy pensando en ti"));
+//        Proveedor::create($request->all());
+
+        $proveedor = new Proveedor;
+        $proveedor->identificacion = $request->identificacion;
+        $proveedor->razon_social = $request->razon_social;
+        $proveedor->activo = $request->activo;
+        $proveedor->website = $request->website;
+        $proveedor->save();
+
+        $contacto = new Contacto;
+        $contacto->persona = $request->persona;
+        $contacto->correo = $request->correo;
+        $contacto->telefono = $request->telefono;
+        $contacto->cedula = $request->cedula;
+        $contacto->dia_pago = $request->dia_pago;
+        $contacto->hora_pago = $request->hora_pago;
+        $contacto->cargo = $request->cargo;
+        $contacto->website = $request->website;
+        $contacto->limite_credito = $request->limite_credito;
+        $contacto->dia_credito = $request->dia_credito;
+        $contacto->dia_tolerancia = $request->dia_tolerancia;
+        $contacto->observaciones = $request->observaciones;
+        $contacto->save();
+
+        $banco = new Banco;
+        $banco->nombre = $request->nombre;
+        $banco->cta_cte_s = $request->cta_cte_s;
+        $banco->cta_cte_us = $request->cta_cte_us;
+        $banco->limite_credito = $request->limite_credito;
+        $banco->dia_credito = $request->dia_credito;
+        $banco->save();
+
+        $sucursal = new Sucursal;
+        $sucursal->direccion = $request->direccion ;
+        $sucursal->distrito = $request->distrito ;
+        $sucursal->provincia = $request->provincia ;
+        $sucursal->pais = $request->pais ;
+        $sucursal->telefono = $request->telefono ;
+        $sucursal->principal = $request->principal ;
+        $sucursal->save();
+
+        $proveedorSucursal = new ProveedorSucursal();
+        $proveedorSucursal->proveedor_id = $proveedor->id;
+        $proveedorSucursal->sucursal_id = $sucursal->id;
+        $proveedorSucursal->save();
+
+
+        $proveedorBanco = new ProveedorBanco();
+        $proveedorBanco->proveedor_id = $proveedor->id;
+        $proveedorBanco->banco_id = $banco->id;
+        $proveedorBanco->save();
+
+        $proveedorContacto = new ProveedorContacto();
+        $proveedorContacto->proveedor_id = $proveedor->id;
+        $proveedorContacto->contacto_id = $contacto->id;
+        $proveedorContacto->save();
+
+        
         return redirect()->route('proveedor.index')->with('success','Registro creado satisfactoriamente');
     }
 
@@ -63,6 +122,8 @@ class ProveedorController extends Controller
     public function show($id)
     {
      $proveedor = Proveedor::findOrFail($id);
+
+     
 
      return view('proveedores.show', ['proveedor' => $proveedor]);
  }
@@ -105,14 +166,18 @@ class ProveedorController extends Controller
         return redirect()->route('proveedor.index')->with('success','Registro eliminado satisfactoriamente');
     }
 
-    public function consulta(Request $request)
+
+
+      public function consulta(Request $request)
     {
 
 
         $ruta = "https://ruc.com.pe/api/beta/ruc";
 
+        $token = "a2f8caf2-482a-4025-aa06-a24abeee1b4d-00eaf510-44bf-4205-84aa-44ddaac2eb8e";
 
-        $rucaconsultar = '10178520739';
+        $rucaconsultar = $request->identificacion;
+        
 
         $data = array(
             "token" => $token,
@@ -120,7 +185,7 @@ class ProveedorController extends Controller
         );
 
         $data_json = json_encode($data);
-
+ 
 // Invocamos el servicio a ruc.com.pe
 // Ejemplo para JSON
         $ch = curl_init();
@@ -138,6 +203,10 @@ class ProveedorController extends Controller
         curl_close($ch);
 
         $leer_respuesta = json_decode($respuesta, true);
+
+
+      
+
         if (isset($leer_respuesta['errors'])) {
     //Mostramos los errores si los hay
             return $leer_respuesta['errors'];
@@ -147,4 +216,8 @@ class ProveedorController extends Controller
         }
 
     }
+
+
+
+
 }

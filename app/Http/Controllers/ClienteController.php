@@ -2,7 +2,19 @@
 
 namespace MultiEmpresa\Http\Controllers;
 
+use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
+use Validator;
+use Response;
+use MultiEmpresa\Cliente;
+use MultiEmpresa\Contacto;
+use MultiEmpresa\Grupo;
+use MultiEmpresa\Sucursal;
+use MultiEmpresa\linea_negocio;
+use MultiEmpresa\ClienteContacto;
+use MultiEmpresa\ClienteGrupo;
+use MultiEmpresa\ClienteSucursal;
+use View;
 
 class ClienteController extends Controller
 {
@@ -13,7 +25,10 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        //
+        $clientes = Cliente::all();
+         //die(var_dump($proveedores));
+
+       return view('Clientes.index', ['clientes' => $clientes]);
     }
 
     /**
@@ -23,7 +38,7 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        //
+        return view('clientes.create');
     }
 
     /**

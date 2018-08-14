@@ -14,18 +14,22 @@ class Proveedor extends Model
 
     public function contacto()
     {
-    	return $this->hasMany('MultiEmpresa\Contacto');
+    	
+        return $this->belongsToMany('\MultiEmpresa\Contacto','proveedor_contactos')
+            ->withPivot('contacto_id');
+            
     }
-
 
     public function banco()
     {
-    	return $this->belongsToMany('MultiEmpresa\Banco');
+    	return $this->belongsToMany('\MultiEmpresa\Banco','proveedor_bancos')
+            ->withPivot('banco_id');
     }
 
     public function sucursal()
     {
-    	return $this->hasMany('MultiEmpresa\Sucursal');
+    	return $this->belongsToMany('\MultiEmpresa\Sucursal','proveedor_sucursals')
+            ->withPivot('sucursal_id');
     }
 
                 

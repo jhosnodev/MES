@@ -56,7 +56,9 @@
                    {{csrf_field()}}
                    <input name="_method" type="hidden" value="DELETE">
 
-                   <button  type="submit" class="item" data-toggle="tooltip" data-placement="top" title="Eliminar"><i class="zmdi zmdi-delete"></i></button>
+                   <button class="item" data-toggle="tooltip" data-placement="top" title="Eliminar">
+                                                            <i class="zmdi zmdi-delete"></i>
+                                                        </button>
                    
                     </div>
                 </td>

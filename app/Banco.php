@@ -8,5 +8,5 @@ class Banco extends Model
 {
     protected $table = 'bancos';
     
-    protected $fillable = ['nombre','cta_cte_s','cta_cte_us','limite_credito');];
+    protected $fillable = ['nombre','cta_cte_s','cta_cte_us','limite_credito'];
 }

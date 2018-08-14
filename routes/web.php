@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('/perfil', function () {
-    return view('auth.prolife');
+    return view('auth.profile');
 });
 
 Auth::routes();

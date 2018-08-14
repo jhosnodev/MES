@@ -14687,7 +14687,7 @@ input.invalid {
   display: none;
 }
 
-button {
+.button1 {
   margin-top: 15px;
   background-color: #63CD0F;
   color: #ffffff;
@@ -14698,7 +14698,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.button1:hover {
   opacity: 0.8;
 }
 
@@ -14726,7 +14726,7 @@ button:hover {
 .step.finish {
   background-color: #63CD0F;
 }
-input {
+input, textarea {
   padding: 10px;
   width: 100%;
   font-size: 17px;

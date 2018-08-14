@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('company', 'BF Global')
-@section('title', 'Proveedores')
+@section('title', 'Proveedor')
 
 @section('content')
 
@@ -13,42 +13,59 @@
     {{ csrf_field() }}
   <!-- One "tab" for each step in the form: -->
   <div class="tab">Datos:
-    <p><input placeholder="RUC" oninput="this.className = ''"  name="identificacion" class="form-control"></p>
-    <p><input placeholder="Nombre o razón Social" oninput="this.className = ''" name="razon_social" class="form-control"></p>
-    <p><input placeholder="Website" oninput="this.className = ''" name="website" class="form-control"></p>
-
-    <p><input type="check" placeholder="Last name..." oninput="this.className = ''" name="activo" class="form-control"></p>
+    <fieldset>
+    <p><input placeholder="RUC" oninput="this.className = ''" onchange="consultaSunat()" name="identificacion" class="form-control" tabindex="1"></p>
+    <p><input placeholder="Nombre o razón Social" oninput="this.className = ''" name="razon_social" class="form-control" tabindex="2"></p>
+    <p><input placeholder="Website" oninput="this.className = ''" name="website" class="form-control" tabindex="3"></p>
+    <p><input placeholder="Estado" oninput="this.className = ''" name="activo" class="form-control" tabindex="4"></p>
+    </fieldset>
   </div>
   <div class="tab">Contacto:
-    <p><input placeholder="Nombre del Contacto" oninput="this.className = ''" name="persona"></p>
-    <p><input placeholder="Correo" oninput="this.className = ''" name="correo"></p>
-    <p><input placeholder="Teléfono" oninput="this.className = ''" name="telefono"></p>
-    <p><input placeholder="Cedúla" oninput="this.className = ''" name="cedula"></p>
-    <p><input placeholder="Día de Pago" oninput="this.className = ''" name="dia_pago"></p>
-    <p><input placeholder="Hora de Pago" oninput="this.className = ''" name="hora_pago"></p>
-    <p><input placeholder="Cargo" oninput="this.className = ''" name="cargo"></p>
-    <p><input placeholder="Día de Tolerancia" oninput="this.className = ''" name="dia_tolerancia"></p>
-    <p><input placeholder="Observaciones" oninput="this.className = ''" name="observaciones"></p>
+    <fieldset>
+    <p><input class="form-control" placeholder="Nombre del Contacto" oninput="this.className = ''" name="persona" tabindex="5"></p>
+    <p><input class="form-control" placeholder="Correo" oninput="this.className = ''" name="correo" tabindex="6" type="email"></p>
+    <p><input class="form-control" placeholder="Teléfono" oninput="this.className = ''" name="telefono" tabindex="7" type="tel"></p>
+    <p><input class="form-control" placeholder="Cedúla" oninput="this.className = ''" name="cedula" tabindex="8"></p>
+    <p><select name="dia_pago" id="dia_pago" class="form-control" placeholder="Día de Pago" oninput="this.className = ''"  tabindex="9">
+      <option value="">Día de Pago</option>
+      <option value="LUNES">Lunes</option>
+      <option value="MARTES">Martes</option>
+      <option value="MIÉRCOLES">Miércoles</option>
+      <option value="JUEVES">Jueves</option>
+      <option value="VIERNES">Viernes</option>
+    </select></p>
+    <p><input class="form-control" placeholder="Hora de Pago" oninput="this.className = ''" name="hora_pago" tabindex="10" type="time"></p>
+    <p><input class="form-control" placeholder="Cargo" oninput="this.className = ''" name="cargo" tabindex="11"></p>
+    <p><input class="form-control" placeholder="Día de Tolerancia" oninput="this.className = ''" name="dia_tolerancia" tabindex="12"></p>
+    <p><textarea name="observaciones" id="observaciones" cols="30" rows="2" class="form-control" placeholder="observaciones" tabindex="13" oninput="this.className = ''"></textarea>
+        
+    </fieldset>
   </div>
   <div class="tab">Sucursal:
-    <p><input placeholder="Dirección" oninput="this.className = ''" name="direccion"></p>
-    <p><input placeholder="Distrito" oninput="this.className = ''" name="distrito"></p>
-    <p><input placeholder="Provincia" oninput="this.className = ''" name="provincia"></p>
-    <p><input placeholder="País" oninput="this.className = ''" name="pais"></p>
-    <p><input placeholder="Teléfono" oninput="this.className = ''" name="telefono"></p>
-    <p><input placeholder="¿Es la sucursal Principal?" oninput="this.className = ''" name="principal"></p>
+    <fieldset>
+    <p><input class="form-control" placeholder="Dirección" oninput="this.className = ''" name="direccion" tabindex="14"></p>
+    <p><input class="form-control" placeholder="Distrito" oninput="this.className = ''" name="distrito" tabindex="15"></p>
+    <p><input class="form-control" placeholder="Provincia" oninput="this.className = ''" name="provincia" tabindex="16"></p>
+    <p><input class="form-control" placeholder="País" oninput="this.className = ''" name="pais" tabindex="17"></p>
+    <p><input class="form-control" placeholder="Teléfono" oninput="this.className = ''" name="telefono" tabindex="18"></p>
+    <p><label for="principal">¿Es la sucursal Principal?
+      <input value="1" oninput="this.className = ''" name="principal" type="checkbox"></label>
+    </p>
+    </fieldset>
   </div>
   <div class="tab">Banco:
-    <p><input placeholder="Nombre de la entidad Bancaria" oninput="this.className = ''" name="nombre"></p>
-    <p><input placeholder="Cuenta Corriente (Soles)"  name="cta_cte_s" type="text"></p>
-    <p><input placeholder="Cuenta Coriente (USD)"  name="cta_cte_us" type="text"></p>
-    <p><input placeholder="Límite de Crédito" oninput="this.className = ''" name="limite_credito" type="text"></p>
-    <p><input placeholder="Día de crédito" oninput="this.className = ''" name="dia_credito" type="text"></p>
+    <fieldset>
+    <p><input class="form-control" placeholder="Nombre de la entidad Bancaria" oninput="this.className = ''" name="nombre"></p>
+    <p><input class="form-control" placeholder="Cuenta Corriente (Soles)"  name="cta_cte_s" type="text"></p>
+    <p><input class="form-control" placeholder="Cuenta Coriente (USD)"  name="cta_cte_us" type="text"></p>
+    <p><input class="form-control" placeholder="Límite de Crédito" oninput="this.className = ''" name="limite_credito" type="number"></p>
+    <p><input class="form-control" placeholder="Día de crédito" oninput="this.className = ''" name="dia_credito" type="text"></p>
+    </fieldset>
   </div>
   <div style="overflow:auto;">
     <div style="float:right;">
-      <button type="button" id="prevBtn" onclick="nextPrev(-1)">Anterior</button>
-      <button type="button" id="nextBtn" onclick="nextPrev(1)">Siguiente</button>
+      <button type="button" id="prevBtn" class="button1" onclick="nextPrev(-1)">Anterior</button>
+      <button type="button" id="nextBtn" class="button1" onclick="nextPrev(1)">Siguiente</button>
     </div>
   </div>
   <!-- Circles which indicates the steps of the form: -->
@@ -138,36 +155,32 @@ function fixStepIndicator(n) {
 }
 
 function consultaSunat(){
-          var val = $('[name=identificacion]').val();
+var val = $('[name=identificacion]').val();
         if(val.trim!='')
-            $.get('{{url('api/sunat')}}?nouser=1&identificacion='+val,function(data)
+            $.get('{{url('api/sunat')}}?identificacion='+val,function(data)
             { 
             console.log(data) ;
-                console.log(data);
-                var proveedor_id = data[0]['id'];
+                
+                
                     
                 if(data[0]!=undefined)
                 {
-                   /* $('[name=razon_social]').val(data[0]['nombre_o_razon_social']);
-                    $('[name=estado]').val(data[0]['estado_del_contribuyente']);
-                    $('[name=numero_telefono]').val(data[0]['numero_telefono']);
-                    $('[name=human_id]').val(data[0]['id']);
-                    $('[name=tranca]').val("PASA");
-                    console.log('hola, vale');
-
-                    */
+                    $('[name=razon_social]').val(data[0]['nombre_o_razon_social']);
+                    $('[name=activo]').val(data[0]['estado_del_contribuyente']);
+                    $('[name=telefono]').val(data[0]['numero_telefono']);
+                    $('[name=provincia]').val(data[0]['provincia']);
+                    $('[name=distrito]').val(data[0]['distrito']);
+                    $('[name=direccion]').val(data[0]['direccion_completa']);
                 }
                 else
                 {
-                  console.log('Jogä');
-                  /*
-                    $('[name=cedula]').val('');
-                    alert('Usuario foraneo a la instituación o ya registrado');
-                    $('[name=propio]').val("foraneo"); 
-                    console.log('Chao, vale')
-                    */
+                   console.log('seamos arte <3');
+                   // alert(data[0]);
+             
+
                 }
             });
+
       
 }
 </script>
