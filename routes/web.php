@@ -13,6 +13,8 @@
 
 Route::get('api/sunat', 'ProveedorController@consulta');
 
+Route::get('api/codigo', 'ItemController@codigo');
+
 Route::get('/', function () {
     return view('welcome');
 });

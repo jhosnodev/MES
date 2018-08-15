@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Validator;
 use Response;
 use MultiEmpresa\Equipo;
+use MultiEmpresa\Medida;
 use View;
 
 
@@ -42,7 +43,21 @@ class EquipoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $equipo = new Equipo();
+        $equipo->marca = $request->marca;
+        $equipo->familia = $request->familia;
+        $equipo->descripcion = $request->descripcion;
+        $equipo->precio = $request->precio;
+        $equipo->imagen = $request->imagen;
+        $equipo->detalle = $request->detalle;
+        $equipo->importado = $request->importado;
+        $equipo->condicion = $request->condicion;
+        $equipo->cantidad_disponible = $request->cantidad_disponible;
+        $equipo->numero_serie = $request->numero_serie;
+        
+
+        $equipo->save();
+        return redirect()->route('equipo.index')->with('success','Registro creado satisfactoriamente');
     }
 
     /**
@@ -68,9 +83,9 @@ class EquipoController extends Controller
      */
     public function edit($id)
     {
-        $equipo = Equipo::findOrFail($id);
+        $equipos = Equipo::findOrFail($id);
 
-        return view('Equipos.edit', ['equipo' => $equipo]);
+        return view('Equipos.edit', ['equipos' => $equipos]);
     }
 
     /**
@@ -83,7 +98,7 @@ class EquipoController extends Controller
     public function update(Request $request, $id)
     {
         Equipo::find($id)->update($request->all());
-        return redirect()->route('Equipos.index')->with('success','Registro actualizado satisfactoriamente');
+        return redirect()->route('equipo.index')->with('success','Registro actualizado satisfactoriamente');
     }
 
     /**
@@ -95,6 +110,6 @@ class EquipoController extends Controller
     public function destroy($id)
     {
         Equipo::findOrFail($id)->delete();
-        return redirect()->route('Equipo.index')->with('success','Registro eliminado satisfactoriamente');
+        return redirect()->route('equipo.index')->with('success','Registro eliminado satisfactoriamente');
     }
 }

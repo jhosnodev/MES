@@ -1,106 +1,69 @@
 @extends('layouts.app')
 
 @section('company', 'BF Global')
-@section('title', 'Gestión de activos')
+@section('title', 'Gestión de Activos')
 
 @section('content')
 
 
 <div class="card col-md-12">
-  <div class="card-header"><strong>Equipo</strong> Nuevo</div>
+  <div class="card-header"><strong>Activos</strong> Nuevo</div>
   <div class="card-body">
-    <form id="regForm" action="{{route('cliente.store')}}" method="POST">
-    {{ csrf_field() }}
-  <!-- One "tab" for each step in the form: -->
-  <div class="tab">Datos:
-    <fieldset>
-    <p><input placeholder="RUC" oninput="this.className = ''" onchange="consultaSunat()" name="identificacion" class="form-control" tabindex="1"></p>
-    <p><input placeholder="Nombre o razón Social" oninput="this.className = ''" name="razon_social" class="form-control" tabindex="2"></p>
-    <p><input placeholder="Website" oninput="this.className = ''" name="website" class="form-control" tabindex="2"></p>
-    <p><select placeholder="Ejecutivo de Ventas" oninput="this.className = ''" name="ejecutivo_ventas_id" class="form-control" tabindex="3">
-      <option value="">Ejecutivo de ventas</option>
-      <option value="1">Juan Jimenez</option>
-      <option value="2">María Parras</option>
-      <option value="3">Lidia Martinez</option>
-    </select>
-    </p>
-    <p><select placeholder="Actividad Económica" oninput="this.className = ''" name="actividad_economica_id" class="form-control" tabindex="3">
-      <option value="">Actividad Económica</option>
-      <option value="Actividad económica 1">Actividad económica 1</option>
-      <option value="Actividad económica 2">Actividad económica 2</option>
-      <option value="Actividad económica 3">Actividad económica 3</option>
-    </select>
-    </p>
-    <p><input placeholder="Grupo" oninput="this.className = ''" name="grupo" class="form-control" tabindex="4"></p>
-    <p><input placeholder="Estado" oninput="this.className = ''" name="estado" class="form-control" tabindex="4"></p>
-    </fieldset>
-  </div>
-  <div class="tab">Contacto:
-    <fieldset>
-    <p><input class="form-control" placeholder="Nombre del Contacto" oninput="this.className = ''" name="persona" tabindex="5"></p>
-    <p><input class="form-control" placeholder="Correo" oninput="this.className = ''" name="correo" tabindex="6" type="email"></p>
-    <p><input class="form-control" placeholder="Teléfono" oninput="this.className = ''" name="telefono" tabindex="7" type="tel"></p>
-    <p><input class="form-control" placeholder="Cedúla" oninput="this.className = ''" name="cedula" tabindex="8"></p>
-    <p><select name="dia_pago" id="dia_pago" class="form-control" placeholder="Día de Pago" oninput="this.className = ''"  tabindex="9">
-      <option value="">Día de Pago</option>
-      <option value="LUNES">Lunes</option>
-      <option value="MARTES">Martes</option>
-      <option value="MIÉRCOLES">Miércoles</option>
-      <option value="JUEVES">Jueves</option>
-      <option value="VIERNES">Viernes</option>
-    </select></p>
-    <p><select name="dia_credito" id="dia_credito" class="form-control" placeholder="Día de Crédito" oninput="this.className = ''"  tabindex="9">
-      <option value="">Día de Crédito</option>
-      <option value="LUNES">Lunes</option>
-      <option value="MARTES">Martes</option>
-      <option value="MIÉRCOLES">Miércoles</option>
-      <option value="JUEVES">Jueves</option>
-      <option value="VIERNES">Viernes</option>
-    </select></p>
-    <p><input class="form-control" placeholder="Hora de Pago" oninput="this.className = ''" name="hora_pago" tabindex="10" type="time"></p>
-    <p><input class="form-control" placeholder="límite de crédito" oninput="this.className = ''" name="limite_credito" tabindex="10" type="number"></p>
-    <p><input class="form-control" placeholder="Cargo" oninput="this.className = ''" name="cargo" tabindex="11"></p>
-    <p><select name="dia_tolerancia" id="dia_tolerancia" class="form-control" placeholder="Día de Tolerancia" oninput="this.className = ''"  tabindex="9">
-      <option value="">Día de Tolerancia</option>
-      <option value="LUNES">Lunes</option>
-      <option value="MARTES">Martes</option>
-      <option value="MIÉRCOLES">Miércoles</option>
-      <option value="JUEVES">Jueves</option>
-      <option value="VIERNES">Viernes</option>
-    </select></p>
+    <form id="regForm" action="{{route('equipo.store')}}" method="POST">
+      {{ csrf_field() }}
+      <!-- One "tab" for each step in the form: -->
+      <div class="tab">Descripción:
+        <fieldset>
+        <p><input placeholder="Marca" oninput="this.className = ''" name="marca" class="form-control" tabindex="3" onchange="codigoGenerate()"></p>
+        <p><input placeholder="Familia" oninput="this.className = ''" name="familia" class="form-control" tabindex="4" onchange="codigoGenerate()"></p>
+        <p><input placeholder="Descripción" oninput="this.className = ''" name="descripcion" class="form-control" tabindex="5">
 
-    <p><textarea name="observaciones" id="observaciones" cols="30" rows="2" class="form-control" placeholder="observaciones" tabindex="13" oninput="this.className = ''"></textarea>
-        
-    </fieldset>
-  </div>
-  <div class="tab">Sucursal:
-    <fieldset>
-    <p><input class="form-control" placeholder="Dirección" oninput="this.className = ''" name="direccion" tabindex="14"></p>
-    <p><input class="form-control" placeholder="Distrito" oninput="this.className = ''" name="distrito" tabindex="15"></p>
-    <p><input class="form-control" placeholder="Provincia" oninput="this.className = ''" name="provincia" tabindex="16"></p>
-    <p><input class="form-control" placeholder="País" oninput="this.className = ''" name="pais" tabindex="17"></p>
-    <p><input class="form-control" placeholder="Teléfono" oninput="this.className = ''" name="telefono" tabindex="18"></p>
-    <p><label for="principal">¿Es la sucursal Principal?
-      <input value="1" oninput="this.className = ''" name="principal" type="checkbox"></label>
-    </p>
-    </fieldset>
-  </div>
+        </p>
 
-  <div style="overflow:auto;">
-    <div style="float:right;">
-      <button type="button" id="prevBtn" class="button1" onclick="nextPrev(-1)">Anterior</button>
-      <button type="button" id="nextBtn" class="button1" onclick="nextPrev(1)">Siguiente</button>
+      </fieldset>
     </div>
-  </div>
-  <!-- Circles which indicates the steps of the form: -->
-  <div style="text-align:center;margin-top:40px;">
-    <span class="step"></span>
-    <span class="step"></span>
-    <span class="step"></span>
+    <div class="tab">Datos:
+      <fieldset>
+        <p><input class="form-control" placeholder="Precio" oninput="this.className = ''" name="precio" tabindex="6" type="number"></p>
+        <p>
+          <label for="imagen">Seleccione una imagen del ítem</label>
+          <input class="form-control" placeholder="Imagen" oninput="this.className = ''" name="imagen" id="imagen" tabindex="7" type="file"></p>
+        <p><input class="form-control" placeholder="Detalle" oninput="this.className = ''" name="detalle" accept=".jpg" tabindex="8"></p>
+        <p><label for="importado">¿Es Importado?
+          <input value="IMPORTADO" oninput="this.className = ''" name="importado" type="checkbox"></label>
+        </p>
+
+      </fieldset>
+    </div>
+    <div class="tab">Almacén:
+      <fieldset>
+        <p><input class="form-control" placeholder="Condición" oninput="this.className = ''" name="condicion" tabindex="14"></p>
+        <p><input class="form-control" placeholder="Cantidad disponible" oninput="this.className = ''" name="cantidad_disponible" tabindex="15" type="number"></p>
  
-  </div>
-</form>
-  </div>
+        <p><input class="form-control" placeholder="Número de Serie" oninput="this.className = ''" name="numero_serie" tabindex="18"></p>
+
+        <p><input class="form-control" placeholder="Peso" oninput="this.className = ''" name="peso" tabindex="14" type="number"></p>
+
+      </fieldset>
+    </div>
+
+
+    <div style="overflow:auto;">
+      <div style="float:right;">
+        <button type="button" id="prevBtn" class="button1" onclick="nextPrev(-1)">Anterior</button>
+        <button type="button" id="nextBtn" class="button1" onclick="nextPrev(1)">Siguiente</button>
+      </div>
+    </div>
+    <!-- Circles which indicates the steps of the form: -->
+    <div style="text-align:center;margin-top:40px;">
+      <span class="step"></span>
+      <span class="step"></span>
+      <span class="step"></span>
+
+
+    </div>
+  </form>
+</div>
 </div>
 
 
@@ -178,35 +141,7 @@ function fixStepIndicator(n) {
   x[n].className += " active";
 }
 
-function consultaSunat(){
-var val = $('[name=identificacion]').val();
-        if(val.trim!='')
-            $.get('{{url('api/sunat')}}?identificacion='+val,function(data)
-            { 
-            console.log(data) ;
-                
-                
-                    
-                if(data[0]!=undefined)
-                {
-                    $('[name=razon_social]').val(data[0]['nombre_o_razon_social']);
-                    $('[name=activo]').val(data[0]['estado_del_contribuyente']);
-                    $('[name=telefono]').val(data[0]['numero_telefono']);
-                    $('[name=provincia]').val(data[0]['provincia']);
-                    $('[name=distrito]').val(data[0]['distrito']);
-                    $('[name=direccion]').val(data[0]['direccion_completa']);
-                }
-                else
-                {
-                   console.log('seamos arte <3');
-                   // alert(data[0]);
-             
 
-                }
-            });
-
-      
-}
 </script>
 
 

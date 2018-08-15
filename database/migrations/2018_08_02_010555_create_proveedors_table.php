@@ -17,7 +17,7 @@ class CreateProveedorsTable extends Migration
             $table->increments('id');
             $table->string('identificacion')->unique();
             $table->string('razon_social');
-            $table->string('activo')->default('ACTIVO');//boolean. Saber estatus. Activo o no
+            $table->string('activo')->default('ACTIVO')->nullable();//boolean. Saber estatus. Activo o no
             $table->string('website');
             $table->string('proveedorsCol1')->nullable();
             $table->string('proveedorsCol2')->nullable();

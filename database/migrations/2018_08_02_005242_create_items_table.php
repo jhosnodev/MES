@@ -15,23 +15,24 @@ class CreateItemsTable extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('tipo');
-            $table->string('marca');
-            $table->string('familia');
-            $table->string('codigo');
-            $table->string('descripcion');
-            $table->string('peso');
-            $table->float('precio');
-            $table->string('imagen');
-            $table->string('detalle');
-            $table->string('importado');
+            $table->string('tipo');//
+            $table->string('marca');//
+            $table->string('familia');//
+            $table->string('codigo');//
+            $table->string('descripcion');//
+            $table->string('peso');//
+            $table->float('precio');//
+            $table->string('imagen');//
+            $table->string('detalle');//
+            $table->string('importado')
+                    ->default('nacional');//
             $table->string('condicion');
             $table->integer('cantidad_disponible'); //cantidad
             $table->integer('stock_min');
             $table->integer('stock_max');
             $table->string('numero_serie');
             $table->string('medida_id');
-            $table->string('linea_negocia_id');
+            $table->string('linea_negocio_id');//
             $table->string('itemsCol1')->nullable();
             $table->string('itemsCol2')->nullable();
             $table->string('itemsCol3')->nullable();

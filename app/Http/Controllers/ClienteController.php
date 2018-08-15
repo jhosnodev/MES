@@ -135,8 +135,9 @@ class ClienteController extends Controller
      */
     public function edit($id)
     {
-        Cliente::find($id)->update($request->all());
-        return redirect()->route('Clientes.index')->with('success','Registro actualizado satisfactoriamente');
+        $cliente = Cliente::findOrFail($id);
+
+        return view('Clientes.edit', ['cliente' => $cliente]);
     }
 
     /**
@@ -148,7 +149,8 @@ class ClienteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Cliente::find($id)->update($request->all());
+        return redirect()->route('cliente.index')->with('success','Registro actualizado satisfactoriamente');
     }
 
     /**

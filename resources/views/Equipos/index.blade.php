@@ -12,10 +12,7 @@
 
 
 
-<div class="table-data__tool">
-    <div></div>
-
-    <div class="table-data__tool-right float-right col-md-offset-8">
+    <div class="table-data__tool-right col-md-4 ml-auto">
 
         <a href="{{ route('equipo.create') }}" id="create-trigger" class="au-btn au-btn-icon au-btn--green au-btn--small text-right add-modal">
             <i class="zmdi zmdi-plus"></i>Agregar Equipo
@@ -23,7 +20,6 @@
 
 
     </div>
-</div>
 <div class="table-responsive table-responsive-data2">
     <table class="table table-data2">
         <thead>
@@ -31,8 +27,8 @@
                 <th>ID</th>
                 <th>Descripción</th>
                 <th>Tipo</th>
-                <th>Marca</th>
-                <th></th>
+                <th>Condición</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -43,19 +39,19 @@
 
                 <td>{{ $equipo->id}}</td>
                 <td>{{ $equipo->descripcion}}</td>
-                <td>{{ $equipo->tipo}}</td>
+                <td>{{ $equipo->condicion}}</td>
                 <td>{{ $equipo->marca}}</td>
                 <td>
                     <div class="table-data-feature">
-                        <a href="{{action('ClienteController@show', $equipo->id)}}" class="item" data-toggle="tooltip" data-placement="top" title="Mostrar">
+                        <a href="{{action('EquipoController@show', $equipo->id)}}" class="item" data-toggle="tooltip" data-placement="top" title="Mostrar">
                             <i class="zmdi zmdi-eye"></i>
                         </a>
 
-                        <a href="{{action('ClienteController@edit', $equipo->id)}}" class="item" data-toggle="tooltip" data-placement="top" title="Editar">
+                        <a href="{{action('EquipoController@edit', $equipo->id)}}" class="item" data-toggle="tooltip" data-placement="top" title="Editar">
                             <i class="zmdi zmdi-edit"></i>
                         </a>
 
-                        <form action="{{action('ClienteController@destroy', $equipo->id)}}" method="post">
+                        <form action="{{action('EquipoController@destroy', $equipo->id)}}" method="post">
                    {{csrf_field()}}
                    <input name="_method" type="hidden" value="DELETE">
 

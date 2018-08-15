@@ -90,7 +90,7 @@ class ProveedorController extends Controller
         $sucursal->provincia = $request->provincia ;
         $sucursal->pais = $request->pais ;
         $sucursal->telefono = $request->telefono ;
-        $sucursal->principal = $request->principal ;
+        $sucursal->principal = $request->principal;
         $sucursal->save();
 
         $proveedorSucursal = new ProveedorSucursal();

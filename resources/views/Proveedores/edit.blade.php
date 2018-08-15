@@ -4,58 +4,39 @@
 @section('title', 'Proveedores')
 
 @section('content')
+<h3 class="title-5 m-b-35"><b>Proveedor</b> Editar</h3>
 <div class="card col-md-12">
     <div class="card-header">
         <strong>Proveedor</strong> {{$proveedor->razon_social}}
     </div>
     <form method="POST" action="{{ route('proveedor.update',$proveedor->id) }}"  role="form" class="form-horizontal">
-    {{--<form method="POST" action=" {{ action('ProveedorController@show', $proveedor->id )}}"  role="form"  class="form-horizontal">--}}
+
         {{ csrf_field() }}
         <input name="_method" type="hidden" value="PATCH">
-        <div class="card-body card-block">
-            
-            <div class="row form-group">
-                <div class="col col-md-3">
-                    <label for="identificacion" class=" form-control-label">Indentificación </label>
-                </div>
-                <div class="col-12 col-md-9">
-                    <input type="texts" id="identificacion" name="identificacion" placeholder="RUC/NIC" class="form-control" value="{{$proveedor->identificacion}}">
-                    <span class="help-block">Consulta con el Sunat</span>
-                </div>
-            </div>
-            <div class="row form-group">
-                <div class="col col-md-3">
-                    <label for="razon_social" class=" form-control-label">Razón Social</label>
-                </div>
-                <div class="col-12 col-md-9">
-                    <input type="text" id="razon_social" name="razon_social" placeholder="Enter Password..." class="form-control" value="{{$proveedor->razon_social}}">
-                    <span class="help-block">Razón social de la persona</span>
-                </div>
-            </div>
-            <div class="row form-group">
-                <div class="col col-md-3">
-                    <label for="website" class=" form-control-label">Website</label>
-                </div>
-                <div class="col-12 col-md-9">
-                    <input type="text" id="website" name="website" placeholder="Enter Password..." class="form-control" value="{{$proveedor->website}}">
-                    <span class="help-block">Website de la persona</span>
-                </div>
-            </div>
-            <div class="row form-group">
-                <div class="col col-md-3">
-                    <label for="estado" class=" form-control-label">Estado</label>
-                </div>
-                <div class="col-12 col-md-9">
-                    <input type="text" id="estado" name="estado" placeholder="Enter Password..." class="form-control" value="{{$proveedor->activo}}">
-                    <span class="help-block">Estado de la persona</span>
-                </div>
-            </div>
-            
+        <div class="card-body ">
+                    <h3>Datos</h3>
+                    <p>
+          
+                        <label for="">RUC/NIC</label>
+                        <input type="text" value="{{$proveedor->identificacion}}" class="form-control"  name="identificacion">
+                        <label for="">Razón Social</label>
+                        <input type="text" value="{{$proveedor->razon_social}}" class="form-control"  name="razon_social">
+
+                        <label for="">Website</label>
+                        <input type="text" value="{{$proveedor->website}}" class="form-control"  name="website">
+
+                        <label for="">Estado</label>
+                        <input type="text" value="{{$proveedor->activo}}" class="form-control"  name="activo">
+
+                    </p>
         </div>
-        <div class="card-footer">
-            <button type="submit" class="btn btn-primary btn-sm">
-                <i class="fa fa-dot-circle-o"></i> Enviar
-            </button>
+        <div class="card-footer ">
+            <div class="col-md-4 ml-auto">
+                     <button type="submit" class="button1">
+                     Actualizar
+                </button>
+            </div>
+           
 
         </div>
     </form>

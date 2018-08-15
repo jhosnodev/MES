@@ -15,19 +15,15 @@ class CreateEquiposTable extends Migration
     {
         Schema::create('equipos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('tipo');
             $table->string('marca');
             $table->string('familia');
-            $table->string('codigo');
             $table->string('descripcion');
-            $table->float('precio');
+            $table->string('precio');
             $table->string('imagen');
             $table->string('detalle');
-            $table->string('importado');
+            $table->string('importado')->default('NACIONAL')->nullable();
             $table->string('condicion');
             $table->integer('cantidad_disponible'); //cantidad
-            $table->integer('stock_min');
-            $table->integer('stock_max');
             $table->string('numero_serie');
             $table->string('equipoCol1')->nullable();
             $table->string('equipoCol2')->nullable();

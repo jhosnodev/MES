@@ -30,7 +30,7 @@
                 <th>ID</th>
                 <th>RUC/NIC</th>
                 <th>Razón Social</th>
-                <th></th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>

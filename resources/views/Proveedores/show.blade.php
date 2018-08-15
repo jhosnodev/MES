@@ -18,7 +18,7 @@
 			<h4>{{$proveedor->razon_social}}</h4>
 		</div>
 		<div class="card-body">
-
+{{--
 			<ul class="nav nav-tabs" id="myTab" role="tablist">
 				<li class="nav-item">
 					<a class="nav-link active" id="datos-tab" data-toggle="tab" href="#datos" role="tab" aria-controls="datos" aria-selected="true">Datos</a>
@@ -34,9 +34,10 @@
 				</li>
 			</ul>
 
-			{{-- CONTENIDO DE LAS TABS--}}
-			<div class="tab-content pl-3 p-1" id="myTabContent">
+			 CONTENIDO DE LAS TABS
+			<div class="tab-content pl-3 p-1" id="myTabContent">--}}
 				<div class="tab-pane fade show active" id="datos" role="tabpanel" aria-labelledby="datos-tab">
+					
 					<h3>Datos</h3>
 					<p>
 						<label for="">ID</label>
@@ -55,6 +56,7 @@
 
 					</p>
 				</div>
+				{{--
 				<div class="tab-pane fade" id="contactos" role="tabpanel" aria-labelledby="contactos-tab">
 					<h3>Contactos</h3>
 					<div class="col-md-4 ml-auto">
@@ -90,7 +92,7 @@
 				</div>
 			</div>
 
-
+--}}
 		</div>
 	</div>
 </div>
