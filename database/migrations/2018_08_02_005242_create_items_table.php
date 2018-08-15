@@ -21,7 +21,7 @@ class CreateItemsTable extends Migration
             $table->string('codigo');//
             $table->string('descripcion');//
             $table->string('peso');//
-            $table->float('precio');//
+            $table->string('precio');//
             $table->string('imagen');//
             $table->string('detalle');//
             $table->string('importado')

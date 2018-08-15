@@ -18,7 +18,7 @@ class CreateNotasTable extends Migration
             $table->datetime('fecha_emision');
             $table->string('retenciones'); 
             $table->string('estado'); 
-            $table->float('sub_total'); 
+            $table->string('sub_total'); 
             $table->string('motivo'); 
             $table->string('tipo_moneda'); 
             $table->string('tipo_documento_id'); 

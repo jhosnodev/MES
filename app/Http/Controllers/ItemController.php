@@ -18,7 +18,7 @@ class ItemController extends Controller
     {
         $items = Item::all();
 
-        return view('Items.index', ['items' => $items]);
+        return view('items.index', ['items' => $items]);
     }
 
     /**
@@ -145,7 +145,7 @@ class ItemController extends Controller
     public function destroy($id)
     {
         Item::findOrFail($id)->delete();
-        return redirect()->route('Item.index')->with('success','Registro eliminado satisfactoriamente');
+        return redirect()->route('item.index')->with('success','Registro eliminado satisfactoriamente');
     }
 
     public function codigo(){

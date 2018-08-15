@@ -18,9 +18,9 @@ class CreateEstadoCuentasTable extends Migration
             $table->date('fecha_actividad');
             $table->string('descripcion');
             $table->string('entrada');
-            $table->float('costo');
+            $table->string('costo');
             $table->string('tipo_moneda');
-            $table->float('tasa_cambio')->nullable();
+            $table->string('tasa_cambio')->nullable();
             $table->string('detalle');
             $table->string('observaciones');
             $table->string('proveedor_id')->nullable();

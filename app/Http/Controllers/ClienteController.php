@@ -38,7 +38,7 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        return view('clientes.create');
+        return view('Clientes.create');
     }
 
     /**
@@ -111,6 +111,7 @@ class ClienteController extends Controller
         $clienteContacto->cliente_id = $cliente->id;
         $clienteContacto->contacto_id = $contacto->id;
         $clienteContacto->save();
+        return redirect()->route('cliente.index')->with('success','Registro guardado satisfactoriamente');
     }
 
     /**
@@ -137,7 +138,7 @@ class ClienteController extends Controller
     {
         $cliente = Cliente::findOrFail($id);
 
-        return view('Clientes.edit', ['cliente' => $cliente]);
+        return view('clientes.edit', ['cliente' => $cliente]);
     }
 
     /**

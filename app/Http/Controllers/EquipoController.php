@@ -32,7 +32,7 @@ class EquipoController extends Controller
      */
     public function create()
     {
-        return view('equipos.create');
+        return view('Equipos.create');
     }
 
     /**
@@ -57,7 +57,7 @@ class EquipoController extends Controller
         
 
         $equipo->save();
-        return redirect()->route('equipo.index')->with('success','Registro creado satisfactoriamente');
+        return redirect()->route('Equipo.index')->with('success','Registro creado satisfactoriamente');
     }
 
     /**
@@ -72,7 +72,7 @@ class EquipoController extends Controller
 
      
 
-     return view('Equipos.show', ['equipos' => $equipos]);
+     return view('equipos.show', ['equipos' => $equipos]);
     }
 
     /**
@@ -85,7 +85,7 @@ class EquipoController extends Controller
     {
         $equipos = Equipo::findOrFail($id);
 
-        return view('Equipos.edit', ['equipos' => $equipos]);
+        return view('equipos.edit', ['equipos' => $equipos]);
     }
 
     /**
@@ -98,7 +98,7 @@ class EquipoController extends Controller
     public function update(Request $request, $id)
     {
         Equipo::find($id)->update($request->all());
-        return redirect()->route('equipo.index')->with('success','Registro actualizado satisfactoriamente');
+        return redirect()->route('Equipo.index')->with('success','Registro actualizado satisfactoriamente');
     }
 
     /**
@@ -110,6 +110,6 @@ class EquipoController extends Controller
     public function destroy($id)
     {
         Equipo::findOrFail($id)->delete();
-        return redirect()->route('equipo.index')->with('success','Registro eliminado satisfactoriamente');
+        return redirect()->route('Equipo.index')->with('success','Registro eliminado satisfactoriamente');
     }
 }

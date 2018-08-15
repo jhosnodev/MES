@@ -16,7 +16,7 @@ class CreateNotaItemsTable extends Migration
         Schema::create('nota_items', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('cantidad');
-            $table->float('precio');
+            $table->string('precio');
             $table->string('item_id');
             $table->string('igv_id');
             $table->string('nota_id');   
