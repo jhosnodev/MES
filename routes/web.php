@@ -34,6 +34,8 @@ Route::resource('proveedor', 'ProveedorController');
 Route::resource('cliente', 'ClienteController');
 
 
+Route::resource('elementos', 'ElementoController');
+
 
 Route::resource('item', 'ItemController');
 
@@ -52,3 +54,11 @@ Route::resource('banco', 'BancoController');
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

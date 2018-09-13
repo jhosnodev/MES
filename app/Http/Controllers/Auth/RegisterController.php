@@ -50,7 +50,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:16|confirmed',
+            'password' => 'required|string|min:6|confirmed',
         ]);
     }
 
@@ -58,13 +58,12 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \MultiEmpresa\User
+     * @return \App\User
      */
     protected function create(array $data)
     {
         return User::create([
             'name' => $data['name'],
-            'user' => $data['user'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);

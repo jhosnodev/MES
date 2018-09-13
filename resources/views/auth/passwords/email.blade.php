@@ -1,44 +1,57 @@
-@extends('layouts.app')
+<?php $__env->startSection('company', 'BF Global'); ?>
+<?php $__env->startSection('title', 'Recuperación de Contraseña'); ?>
 
-@section('company', 'BF Global')
-@section('title', 'Recuperación de Contraseña')
-
-@section('guest-content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Reset Password</div>
+<?php $__env->startSection('guest-content'); ?>
+<body class="animsition">
+    <div class="page-wrapper">
+        <div class="page-content--bge5">
+            <div class="container">
+                <div class="login-wrap">
+                    <div class="login-content">
+                        <div class="login-logo">
+                            <a href="{{route('/')}}">
+                                <img src="{{ asset('img/bfglobal-logo.png') }}" alt="BFGlobal">
+                            </a>
+                        </div>
+                        <div class="login-form">
 
                 <div class="panel-body">
-                    @if (session('status'))
+                    <?php if(session('status')): ?>
                         <div class="alert alert-success">
-                            {{ session('status') }}
+                            <?php echo e(session('status')); ?>
+
                         </div>
-                    @endif
+                    <?php endif; ?>
 
-                    <form class="form-horizontal" method="POST" action="{{ route('password.email') }}">
-                        {{ csrf_field() }}
+                    <form class="form-horizontal" method="POST" action="<?php echo e(route('password.email')); ?>">
+                        <?php echo e(csrf_field()); ?>
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+                        <div class="form-group<?php echo e($errors->has('email') ? ' has-error' : ''); ?>">
+                            <label for="email" class="control-label">Dirección de Correo</label>
 
-                                @if ($errors->has('email'))
+                            <div class="">
+                                <input id="email" type="email" class="form-control au-input au-input--full" name="email" value="<?php echo e(old('email')); ?>" required>
+
+                                <?php if($errors->has('email')): ?>
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong><?php echo e($errors->first('email')); ?></strong>
                                     </span>
-                                @endif
+                                <?php endif; ?>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Send Password Reset Link
+                            <div class="">
+                                <button type="submit" class="au-btn au-btn--block au-btn--green m-b-20">
+                                    Enviar enlace para restablecer contraseña
                                 </button>
+                                <div class="register-link">
+                                <p>
+                                    ¿Ya tienes una cuenta?
+                                    <a href="{{ route('login') }}">Inicia sesión</a>
+                                </p>
+                            </div>
                             </div>
                         </div>
                     </form>
@@ -47,4 +60,6 @@
         </div>
     </div>
 </div>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

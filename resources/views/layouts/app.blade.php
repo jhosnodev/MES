@@ -17,12 +17,21 @@
 
    <!-- Jquery JS-->
     <script src="<?php echo e(asset('js/jquery-3.3.1.js'))?>"></script>
-        <!-- Datatable-->
+        <!-- Datatable
     <script src="<?php echo e(asset('js/datatable/dataTables.bootstrap4.min.css'))?>"></script>
     <script src="<?php echo e(asset('js/datatable/responsive.bootstrap4.min.css'))?>"></script>
-
+-->
 
   <!--CSS-->
+
+   <!-- toastr notifications -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+
+    <!-- JQUERY DEPENDENCY-->
+    
+        <link rel="stylesheet" href="<?php echo e(asset('css/jquery-ui.min.css')); ?>" />
+        <link rel="stylesheet" href="<?php echo e(asset('css/jquery-confirm.css')); ?>" />
+
     <!-- Fontfaces CSS-->
   <link href="<?php echo e(asset('css/font-face.css')) ?>" rel="stylesheet" media="all">
   <link href="<?php echo e(asset('js/font-awesome-4.7/css/font-awesome.min.css')) ?>" rel="stylesheet" media="all">
@@ -65,16 +74,6 @@
   <div class="page-wrapper">
 
 
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
 
     <!-- HEADER MOBILE-->
     <header class="header-mobile d-block d-lg-none">
@@ -496,6 +495,10 @@
                           <a href="#">
                             <i class="zmdi zmdi-settings"></i>empresas</a>
                         </div>
+                        <div class="account-dropdown__item">
+                          <a href="{{ route('login') }}">
+                            <i class="zmdi zmdi-settings"></i>Login</a>
+                        </div>
                         
                       <div class="account-dropdown__footer">
                         <a href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -531,14 +534,10 @@
 
 
     <!-- GENERIC DIV MODAL-->
-            <!-- modal small -->
-            <div class="modal fade" id="smallmodal" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" aria-hidden="true">
-                
-            </div>
-
-
-            <!-- end modal small -->
-    <div id="all-modal" class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+           <div class="modal fade" id="scrollmodal" tabindex="-1" role="dialog" aria-labelledby="scrollmodalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg" role="document">
+              </div>
+           </div>
     <!-- END GENERIC DIV MODAL-->
     
     <!-- FOOTER-->
@@ -554,11 +553,25 @@
   </div>
 
 
-    <!-- Datatable-->
+    @yield('js')
+
+    <!-- toastr notifications -->
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+
+    <!-- JQUERY DEPENDECY --->
+
+    <script src="<?php echo e(asset('js/jquery-ui.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('js/jquery-confirm.js')); ?>"></script>
+
+    <!-- Datatable
     <script src="<?php echo e(asset('js/datatable/dataTables.bootstrap4.min.js'))?>"></script>
     <script src="<?php echo e(asset('js/datatable/dataTables.responsive.min.js'))?>"></script>
     <script src="<?php echo e(asset('js/datatable/responsive.bootstrap4.min.js'))?>"></script>
     <script src="<?php echo e(asset('js/datatable/jquery.dataTables.min.js'))?>"></script>
+
+
+    -->
     <!-- Bootstrap JS-->
     <script src="<?php echo e(asset('js/bootstrap-4.1/popper.min.js')) ?>"></script>
     <script src="<?php echo e(asset('js/bootstrap-4.1/bootstrap.min.js')) ?>"></script>
@@ -582,6 +595,7 @@
     <!-- Main JS-->
     <script src="<?php echo e(asset('js/main.js')) ?>"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+
 
 </body>
 </html>

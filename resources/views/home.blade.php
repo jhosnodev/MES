@@ -1,8 +1,5 @@
 @extends('layouts.app')
 
-@section('company', 'BF Global')
-@section('title', 'Perfil')
-
 @section('content')
 <div class="container">
     <div class="row">
