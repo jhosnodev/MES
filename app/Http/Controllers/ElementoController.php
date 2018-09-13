@@ -23,7 +23,7 @@ class ElementoController extends Controller
      */
     public function create()
     {
-        //
+        return view('Elementos.create');
     }
 
     /**

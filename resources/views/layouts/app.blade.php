@@ -534,9 +534,9 @@
 
 
     <!-- GENERIC DIV MODAL-->
-           <div class="modal fade" id="scrollmodal" tabindex="-1" role="dialog" aria-labelledby="scrollmodalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-lg" role="document">
-              </div>
+           <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+            </div>
            </div>
     <!-- END GENERIC DIV MODAL-->
     

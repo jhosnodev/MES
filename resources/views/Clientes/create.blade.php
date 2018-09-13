@@ -111,12 +111,10 @@
   <div class="tab-pane fade show active" id="pills-contacto" role="tabpanel" aria-labelledby="pills-contacto-tab">
 
 
-    <a href="#" id="create-trigger" class="au-btn au-btn-icon au-btn--green au-btn--small text-right add-modal add-modal">
+    <a href="#" class="au-btn au-btn-icon au-btn--green au-btn--small text-right" id="modal-trigger-create" data-toggle="modal" data-target="#modal">
             <i class="zmdi zmdi-plus"></i>Agregar Elemento
         </a >
-<button type="button" class="btn btn-secondary mb-1" data-toggle="modal" data-target="#scrollmodal">
-                      Scrolling
-                    </button>
+
 
 
       </div>
@@ -231,74 +229,14 @@
 </div>
 
 
-<!-- Modal form to add a post -->
-    <div id="addModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                    <h4 class="modal-title"></h4>
-                </div>
-                <div class="modal-body">
-                    <form class="form-horizontal" role="form">
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="title">Title:</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="title_add" autofocus>
-                                <small>Min: 2, Max: 32, only text</small>
-                                <p class="errorTitle text-center alert alert-danger hidden"></p>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="content">Content:</label>
-                            <div class="col-sm-10">
-                                <textarea class="form-control" id="content_add" cols="40" rows="5"></textarea>
-                                <small>Min: 2, Max: 128, only text</small>
-                                <p class="errorContent text-center alert alert-danger hidden"></p>
-                            </div>
-                        </div>
-                    </form>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-success add" data-dismiss="modal">
-                            <span id="" class=''></span> Agregar
-                        </button>
-                        <button type="button" class="btn btn-warning" data-dismiss="modal">
-                            <span class=''></span> Cerrar
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
   
-      <!-- modal scroll -->
-      
-        
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="scrollmodalLabel">Scrolling Long Content Modal</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <p>
-                dasdasd
-              </p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-              <button type="button" class="btn btn-primary">Confirm</button>
-            </div>
-          </div>
-        
-      
-      <!-- end modal scroll -->
+  
 
       @endsection
 @section('js')
 <script>
-      $('#new-trigger').on('click', function (event) {
+      $('#modal-trigger-create').on('click', function (event) {
           var button = $(event.relatedTarget); // Button that triggered the modal
 
 
@@ -308,7 +246,7 @@
             data:{},
             success:function(data)
           {
-            $('#all-modal').html(data).modal('show');
+            $('#modal').html(data).modal('show');
              
             $('#canc').on('click', function (event) { $('.evento').html(''); });
           },
@@ -318,7 +256,7 @@
       });
         });
 $('#canc').click(function(){
-    $('all-modal').modal('hide');
+    $('modal').modal('hide');
 })
 function paraEdit(id)
 {
