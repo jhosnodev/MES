@@ -16,12 +16,11 @@ class CreateSucursalsTable extends Migration
         Schema::create('sucursals', function (Blueprint $table) {
             $table->increments('id');
             $table->string('direccion');
-            $table->string('distrito');
-            $table->string('provincia');
+            $table->string('distrito')->nullable();
+            $table->string('provincia')->nullable();
             $table->string('pais');
             $table->string('telefono');
-            $table->boolean('principal')
-                    ->default('0')->nullable();//es o no la sucursal principal 
+            $table->string('tipo_direccion');
             $table->string('sucursalsCol1')->nullable();
             $table->string('sucursalsCol2')->nullable();
             $table->string('sucursalsCol3')->nullable();

@@ -16,7 +16,8 @@
 
     <div class="table-data__tool-right col-md-4 ml-auto">
 
-        <a href="{{ route('cliente.create') }}" id="create-trigger" class="au-btn au-btn-icon au-btn--green au-btn--small text-right add-modal">
+
+    <a href="#modal-large-1" class="au-btn au-btn-icon au-btn--green au-btn--small text-right" id="modal-trigger-create" data-toggle="modal" >
             <i class="zmdi zmdi-plus"></i>Agregar Cliente
         </a >
 
@@ -77,22 +78,53 @@
 
 
 @endsection
-@section('script')
+@section('js')
 <script>
-
-    $('#create-trigger').on('click', function (event) {
+      $('#modal-trigger-create').on('click', function (event) {
           var button = $(event.relatedTarget); // Button that triggered the modal
 
+
           $.ajax({
-            url: '<?php echo e(url('/nuevo_proveedor')); ?>',
+            url: '{{url('cliente/create')}}',
             method:'GET',
             data:{},
             success:function(data)
-            {
-              $('#all-modal').html(data);
+          {
+            $('#modal-large-1').html(data).modal('show');
+             
+            $('#canc').on('click', function (event) { $('.evento').html(''); });
+          },
+          error:function(data){
+            console.log(data);
           }
       });
+        });
+$('#canc').click(function(){
+    $('modal').modal('hide');
+})
+      $('#modal-trigger-item').on('click', function (event) {
+          var button = $(event.relatedTarget); // Button that triggered the modal
+
+
+          $.ajax({
+            url: '{{url('cliente/create')}}',
+            method:'GET',
+            data:{},
+            success:function(data)
+          {
+            $('#modal-large-2').html(data).modal('show');
+             
+            $('#canc').on('click', function (event) { $('.evento').html(''); });
+          },
+          error:function(data){
+            console.log(data);
+          }
       });
+        });
+$('#canc').click(function(){
+    $('modal').modal('hide');
+})
+    
   </script>
 
   @endsection

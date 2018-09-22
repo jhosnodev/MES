@@ -82,12 +82,12 @@
           var button = $(event.relatedTarget); // Button that triggered the modal
 
           $.ajax({
-            url: '<?php echo e(url('/nuevo_proveedor')); ?>',
+            url: '<?php echo e(url('item/create')); ?>',
             method:'GET',
             data:{},
             success:function(data)
             {
-              $('#all-modal').html(data);
+              $('##modal-large-2').html(data);
           }
       });
       });

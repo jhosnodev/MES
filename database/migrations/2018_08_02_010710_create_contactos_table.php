@@ -18,15 +18,9 @@ class CreateContactosTable extends Migration
             $table->string('persona');//nombre de Persona
             $table->string('correo');
             $table->string('telefono')->nullable();
-            $table->string('cedula');
-            $table->string('dia_pago');
-            $table->string('hora_pago');
             $table->string('cargo');
-            $table->string('website')->nullable();
-            $table->string('limite_credito');//Redundante con table banco?????
-            $table->string('dia_credito');//Redundante con table banco?????
-            $table->string('dia_tolerancia');
             $table->string('observaciones');
+            $table->string('sucursal_id')->nullable();
             $table->string('contactosCol1')->nullable();
             $table->string('contactosCol2')->nullable();
             $table->string('contactosCol3')->nullable();

@@ -25,6 +25,8 @@ Route::get('/perfil', function () {
 
 Auth::routes();
 
+Route::get('/import', 'TestController@import');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 
@@ -51,6 +53,12 @@ Route::resource('sucursal', 'SucursalController');
 
 
 Route::resource('banco', 'BancoController');
+
+
+Route::resource('presupuesto', 'BoletasController');
+
+
+Route::resource('facturacion', 'FacturacionController');
 
 
 
